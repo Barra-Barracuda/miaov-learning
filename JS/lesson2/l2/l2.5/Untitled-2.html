@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload = function(){ 
+	var str='';  //提高性能创建一个字符串
+	for(var i=0;i<2000;i++){ 
+	//document.body.innerHTML +='<input type="button" value="按钮" />' //严重影响性能，大量读取body！！！
+		str += '<input type="button" value="按钮" />' //''包在外面
+		}
+		document.body.innerHTML=str; //减少对body的读写，只访问一次，提高性能
+	}
+</script>
+</head>
+
+<body>
+</body>
+</html>

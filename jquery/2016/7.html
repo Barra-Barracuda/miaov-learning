@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script src="jquery-1.11.3.js"></script>
+<style>
+#div1{background: red;width:100px;height:100px;padding:10px;border:1px solid red;margin:1px;}
+</style>
+<script>
+$(function(){
+    //$('#div1').width(200); //设置
+  // alert( $('#div1').width()); //width : 100 物体本身的寬
+
+// $('#div1').innerWidth(200); //innerWidth ：改变了width：180 + 本身padding20  width = 200 - padding
+  // alert( $('#div1').innerWidth());  //innerWidth :120 width + padding 物体本身的宽加上填充
+
+  //alert( $('#div1').outerWidth()); //outerWidth :122 width + padding + border 物体本身宽 加填充加边框
+
+
+   // $('#div1').outerWidth(200,true);
+   // alert( $('#div1').outerWidth(true)); //outerWidth(true) :124 width + padding + border + margin 只需outerWidth加参数true
+})
+</script>
+</head>
+<body>
+	<div id="div1">div</div>
+</body>
+</html>

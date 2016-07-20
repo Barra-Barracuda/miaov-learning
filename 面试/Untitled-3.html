@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script>
+var str = '55562123761';
+
+/*
+function test(str){
+	
+	var iNum = str.length%3; //根据余数截取个数
+	
+	var prev = '';
+	var arr = [];
+	var iNow = 0;
+	var tmp = '';
+	
+	if(iNum !=0){
+		prev = str.substring(0,iNum);
+		arr.push(prev);
+		
+		}
+		
+	str = str.substring(iNum); //循环截取后的数字
+	
+		
+	for(var i=0;i<str.length;i++){
+		iNow++;
+		tmp += str[i];
+		
+		
+		if(iNow == 3 && tmp){
+			arr.push(tmp);
+			tmp =''; //进行下一次装载
+			iNow = 0;
+			}
+		
+		};
+		return arr.join(',');
+	}
+
+alert(test(str))*/
+
+function test(str){
+	
+	var re = /(?=(?!\b)(\d{3})+$)/g; //$ 最后开始匹配 \b 表示开始结束空格 (?!\b)不包括起始位置
+	
+	return str.replace(re,',');
+	}
+
+alert(test(str));
+
+</script>
+<title>无标题文档</title>
+</head>
+
+<body>
+</body>
+</html>

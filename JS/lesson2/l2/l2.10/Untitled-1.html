@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+function fn1(){
+	alert(this); //this指向window，因为函数是在window下执行
+	};
+window.fn1(); 
+</script>
+</head>
+
+<body>
+<input id="btn1" type="button" value="按钮" />
+<input id="btn2" type="button" onclick="alert(this)" value="按钮2" /> <!--指向input元素 -->
+<input id="btn3" type="button" onclick="fn1()" value="按钮3" /> <!--指向window-->
+<script>
+var oBtn = document.getElementById('btn1');
+//oBtn.onclick =fn1;  //this指向了input元素，因为这里调用了
+oBtn.onclick = function(){
+	fn1(); // fn1()的this指向window
+	} 
+</script>
+</body>
+</html>

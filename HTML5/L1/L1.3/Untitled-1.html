@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<form action="http://www.baidu.com">
+<input type="email" placeholder="请输入..." /> <!--sogou不支持 --> <!-- placeholder IE 678不支持 -->
+<!--<input type="tel" /> <!--移动端才用到 -->
+<input type="url" />
+<input type="search" /> <!-- 输入框多个X取消 -->
+<input type="range" step="2" min="4" max="20" value="14" />
+<input type="color" /> <!-- IE 11 不支持 -->
+<input type="number" /><!-- IE 11 不支持 -->
+<input type="datetime" /> <!-- 除了OPERA 都不支持 -->
+<input type="datetime-local" /> <!-- 除了sogou chrome oprea 都不支持 -->
+<input type="time" /><!-- IE11 不支持 -->
+<input type="text"  autofocus /> <!-- IE 678 不支持 -->
+<!--<input type="text"  required /> <!--IE不支持 -->
+<input type="text" placeholder="请输入4-16个字符" name="user" autocomplete="off" pattern="\d{1,5}" /><!--IE10以下不支持 -->
+<input type="submit" />
+<input type="submit" value="保存至草稿箱" formaction="http://miaov.com" formnovalidate /><!--ie10以下不支持 formnovalidate关闭验证 -->
+
+</form>
+</body>
+</html>

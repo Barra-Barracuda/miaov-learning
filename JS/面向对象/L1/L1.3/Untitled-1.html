@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+//var obj = {};
+var obj = new Object(); //创建空的对象
+obj.name = '小明';//属性
+obj.showname = function(){ //方法
+	alert(this.name); //this 就是指那个调用的，
+	
+	};
+obj.showname(); //这里调用，所以this是指obj ，如果没有obj的话，this指向window
+
+var obj2 = new Object(); //创建空的对象
+obj2.name = '小明';//属性
+obj2.showname = function(){ //方法
+	alert(this.name); //this 就是指那个调用的，
+	
+	};
+obj2.showname(); //这里调用，所以this是指obj ，如果没有obj的话，this指向window
+</script>
+</head>
+
+<body>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+#div1{width:100px;height:100px;background:red;position:absolute;}
+#img1{position:absolute;}
+</style>
+<script>
+window.onload = function(){
+	var oDiv = document.getElementById('div1');
+	var oImg = document.getElementById('img1');
+	
+	oImg.onmousedown = function(ev){
+		
+		var ev = ev || event;
+		
+		var disX = ev.clientX -this.offsetLeft; //鼠标到物体的距离 =当前鼠标到可视区的距离-物体到页面的距离 ，简称鼠标的值-物体的值
+		
+		var disY = ev.clientY -this.offsetTop;
+		
+		/*if(oImg.setCapture){ //解决IE下的问题
+			oImg.setCapture();
+			};*/
+		
+		document.onmousemove = function(ev){ //只要不脱离文档就好，用div的话鼠标太快会脱离
+			
+			var ev = ev || event;
+			
+			oImg.style.left = ev.clientX - disX + 'px';
+			oImg.style.top = ev.clientY - disY + 'px';
+			
+			};
+			
+			document.onmouseup = function(){
+				document.onmousemove = document.onmouseup = null;
+				
+				//释放全局捕获releaseCapture();
+				/*if(oImg.releaseCapture){
+					oImg.releaseCapture();
+					};*/
+				
+				
+				};
+				
+				return false; //标准下：阻止onmousedown默认行为，不阻止的话会带文字一起选中拖拽
+		};
+	
+	};
+</script>
+</head>
+
+<body>
+	12313131313
+	<div id="div1"></div>
+    <img src="1.jpg" id="img1"/>
+   
+
+</body>
+</html>

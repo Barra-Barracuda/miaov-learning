@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+img{position:absolute;top:200px;left:300px;width:180px;}
+#img1{left:100px;}
+</style>
+<script src="../../miaov.js" >
+</script>
+<script>
+window.onload = function(){
+	var oImg1 = document.getElementById('img1');
+	var oImg2 = document.getElementById('img2');
+	
+	oImg1.onclick =  fnShake; //不能加括号
+	oImg2.onclick =  fnShake;
+	
+	
+	function fnShake(){
+		var that = this; //因为有回调函数在里面，不能直接用this
+		shake(that,'left',function(){
+		shake(that,'top'); //第二个抖动写在回调函数里
+		});
+		};	
+		
+	function shake(obj,attr,endFn){
+		var pos = parseInt(getStyle(obj,attr));
+		var arr = []; //抖动 20，-20，18，-18.....0
+
+		var num =0;
+		
+		
+		for(var i=20;i>0;i-=2){
+			arr.push(i,-i);	
+			};
+			arr.push(0);  //因为循环到0就停止了，还要放个0进去
+			//alert(arr);
+			
+			clearInterval(obj.shake);
+			obj.shake = setInterval(function(){
+				obj.style[attr] = pos + arr[num] + 'px';
+				num++;
+				if(num === arr.length){
+					clearInterval(obj.shake);
+					
+					endFn && endFn();  //如果回调函数传进来就调用
+					};
+				},50)
+		};	
+	};
+</script>
+</head>
+
+<body>
+<img id="img1" src="img/4.jpg" />
+<img id="img2" src="img/5.jpg" />
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+
+
+
+    <script>
+ function fn(x,y){
+    x++;
+    y++;
+ /*
+    return {
+        x:x,
+        y:y
+    };
+    */
+    return {x,y};
+ };
+ console.log(fn(1,2));
+
+var obj = {
+    name:'haha',
+    /*
+    showName:function(){
+        return this.name; 
+    }  */
+
+     showName(){
+        return this.name;
+      
+    }
+};
+console.log(obj.showName());
+
+var sex = '男';
+var person = {
+    name:'hehe',
+    [sex]:false, //变成未定义
+    ['get'+'name'](){
+        return this.name;
+    }
+};
+console.log(person.getname());
+//console.log(person[sex]); //false;
+
+    </script>
+</body>
+</html>

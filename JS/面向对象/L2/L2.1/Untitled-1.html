@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+/*function Aaa(){
+	this.name ='小明';
+	}
+Aaa.prototype.showName = function(){
+	alert(this.name);
+	
+	};	
+	
+var a1 = new Aaa();	
+a1.showName();
+
+
+//function Array(){};
+//Array.prototype.push = function(){}; //在JS源码：系统对象也是基于原型的程序
+
+//var arr = new Array();
+//arr.push();
+//*/
+
+var arr = [1,2,3];
+Array.prototype.push = function(){
+	//this:arr:1,2,3
+	//arguments:形参:4,5,6
+	for(var i=0;i<arguments.length;i++){
+		this[this.length] = arguments[i]
+		};
+		return this.length; //返回数组的长度
+	};
+	
+arr.push(4,5,6);
+alert(arr);	
+</script>
+</head>
+
+<body>
+</body>
+</html>

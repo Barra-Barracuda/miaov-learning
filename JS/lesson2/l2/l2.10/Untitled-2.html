@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload = function(){
+	var that=null; //先设置为空
+	
+	var aBtn=document.getElementsByTagName('input');
+	for(var i=0;i<aBtn.length;i++){
+/*		aBtn[i].onclick = function(){
+			//this.style.background = 'red';
+			
+			that = this; //this不能在fn1函数里调用，所以先用that存起来
+			fn1();
+			};*/
+			
+			
+			aBtn[i].onclick =fn1; //这里调用fn1，this就是指向按钮了
+		};
+	function fn1(){
+		//this =>window  //因为这里的this是指向window的，所以用that代替this
+		//that.style.background='yellow'; //这里that就是按钮了
+		this.style.background ='yellow';
+		};
+	};
+</script>
+</head>
+
+<body>
+<input type="button" value="按钮1" />
+<input type="button" value="按钮2" />
+<input type="button" value="按钮3" />
+</body>
+</html>

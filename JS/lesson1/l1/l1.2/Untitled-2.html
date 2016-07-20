@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+#div1{
+	width:240px;height:200px;border:1px solid #333333;background:#F1F1F1; padding:10px;
+	}
+</style>
+<script>
+window.onload= function(){
+	var oDiv = document.getElementById('div1');
+	var oImg = document.getElementById('img1');
+	var oText = document.getElementById('text1');
+	var oBtn =document.getElementById('btn1');
+	
+	var interActive = true;  //先设置布尔值条件判断为真
+	
+	oImg.onclick = function(){
+     if(interActive){  //是真的话就转成2.png，再把真变假
+		 oImg.src='img/2.png'
+		 interActive =false;  //这句要设置到判断里头，然后设置假的，就会走到else里；不设置就不会跳到else里
+		 }
+		 else{
+			 oImg.src ='img/1.png' 
+			 interActive=true;  //在设置为true 就可以重新来过了
+			};
+	}
+
+	
+	
+	oBtn.onclick = function(){
+		//oDiv.innerHTML=oDiv.innerHTML + oSpan.innerHTML + oText.value + '</br>' //如何后面不写oDiv.innerHTML就替换了，增加了就添加 a= a+b ,'<br/>'换行
+		//oDiv.innerHTML+=oImg.outerHTML + oText.value + '<br/>'
+        oDiv.innerHTML = oImg.outerHTML + oText.value + '<br/>' + oDiv.innerHTML;  //第一条最新的
+		oText.value="";
+		}
+	}
+</script>
+</head>
+
+<body>
+<div id="div1"></div>
+<img src="img/1.png" alt="qq" id="img1"/>
+<input type="text" id="text1" />
+<input type="button" value="提交" id="btn1"/>
+</body>
+</html>

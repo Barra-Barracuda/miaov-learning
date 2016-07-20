@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+
+</head>
+
+<body>
+<script>
+var str = '妙味课堂是一支独具特色的IT培训团队，妙味反对传统IT教育枯燥乏味的教学模式，妙味提供一种全新的快乐学习方法！';
+//alert(str.lastIndexOf('妙味',38)); //从右往左找
+
+var s ='妙味';
+var i = 0;
+
+
+
+for(;str.indexOf(s,i)!=-1;){//for(;true;)
+	alert(str.indexOf(s,i));
+	i = str.indexOf(s,i) + s.length //s.length是因为妙味占了2个字，从2个字后面再开始找 ， 当前的位置i再加s.length(2位)，不加的话会死循环，一直找第一个  //这个就像i++一样
+	};
+	
+	/* for(;str.lastIndexOf(s,i)!=-1;){//for(;true;)
+    alert(str.lastIndexOf(s,i));
+    i = str.lastIndexOf(s,i) - s.length //s.length是因为妙味占了2个字，从2个字后面再开始找 ， 当前的位置i再加s.length(2位)，不加的话会死循环，一直找第一个  //这个就像i++一样
+    }; */
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="css/bootstrap.css">
+<style>
+  .tab-content{
+  border:1px solid #ddd;border-top:none;padding:50px;border-radius:0 0 5px 5px;
+  }
+</style>
+</head>
+
+<body style="height:2000px">
+<div class="container">
+ <ul class="nav nav-tabs">
+   <li class="active"><a href="#a" data-toggle="tab">one</a></li>
+   <li><a href="#b" data-toggle="tab">two</a></li>
+   <li><a href="#c" data-toggle="tab">three</a></li>
+ </ul>
+ <ul class="tab-content">
+   <li id="a" class="tab-pane active">aaaaaaaaa</li>
+   <li id="b" class="tab-pane">bbbbbbbbb</li>
+   <li id="c" class="tab-pane">ccccccccc</li>
+ </ul>
+<br>
+<div style="width:400px">
+  <ul class="nav nav-tabs">
+   <li class="active"><a href="#a1" data-toggle="tab">one</a></li>
+   <li><a href="#b1" data-toggle="tab">two</a></li>
+   <li><a href="#c1" data-toggle="tab">three</a></li>
+ </ul>
+ <ul class="tab-content">
+   <li id="a1" class="tab-pane fade in active">aaaaaaaaa</li>
+   <li id="b1" class="tab-pane fade">bbbbbbbbb</li>
+   <li id="c1" class="tab-pane fade">ccccccccc</li>
+ </ul>
+ </div>
+ <br>
+ <div style="width:400px">
+  <ul class="nav nav-tabs"  id="myTabs">
+   <li class="active"><a href="#a2" data-toggle="tab">one</a></li>
+   <li><a href="#b2" data-toggle="tab">two</a></li>
+   <li><a href="#c2" data-toggle="tab">three</a></li>
+ </ul>
+ <ul class="tab-content">
+   <li id="a2" class="tab-pane active">aaaaaaaaa</li>
+   <li id="b2" class="tab-pane">bbbbbbbbb</li>
+   <li id="c2" class="tab-pane">ccccccccc</li>
+ </ul>
+ </div>
+ <br>
+ <div style="width:400px">
+  <ul class="nav nav-tabs">
+   <li class="active"><a href="#a3" data-toggle="tab">one</a></li>
+   <li><a href="#b3" data-toggle="tab">two</a></li>
+   <li><a href="#c3" data-toggle="tab">three</a></li>
+ </ul>
+ <ul class="tab-content">
+   <li id="a3" class="tab-pane active">aaaaaaaaa</li>
+   <li id="b3" class="tab-pane">bbbbbbbbb</li>
+   <li id="c3" class="tab-pane">ccccccccc</li>
+ </ul>
+ </div>
+</div>
+
+
+
+<script src="js/jquery-1.11.3.min.js"></script> 
+<script src="js/bootstrap.js"></script>
+<script>
+$('#myTabs a').mouseover(function(){
+  $(this).tab('show');
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+div{width:50px;height:50px;background:red;position:absolute;top:0;left:0;font-size:30px;text-align:center;line-height:50px;color:#FFFFFF;}
+</style>
+<script>
+window.onload = function(){
+	var aDiv = document.getElementsByTagName('div');
+	var str ='';
+	for(var i=0;i<10;i++){
+	str += '<div>' + i + '</div>'
+	document.body.innerHTML = str; 
+		};
+		
+	for(var i=0;i<aDiv.length;i++){ //因为前面循环绝对定位并在一起了，所以要再用循环让他们分开
+		
+	//aDiv[i].style.left =10 + i*60 +'px';  //因为每个div宽度是50px想往左隔离10px,所以是60px 第一个10是第一个元素往左隔开;
+	aDiv[i].style.left =10 + i*50 +'px';
+	aDiv[i].style.top =10 + i*50 +'px';
+		}
+	};
+</script>
+</head>
+
+<body>
+</body>
+</html>

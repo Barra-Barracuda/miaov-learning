@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+//fn1() =>100
+/*alert(fn1().length)
+function fn1(){
+	//return 100;
+	return 'miaov';
+	
+	};*/
+	
+	
+//alert(fn2()); //用return function的话要用alert()访问里面的alert（1）；fn2()等于function（）{alert（1）}；
+//或者
+/*fn2(20)(10); 
+function fn2(a){//20
+	return function(b){//10
+		alert(a+b); //30
+		};
+	
+	};	*/
+	
+fn3().onload = function(){
+	document.body.innerHTML =123;
+	};	
+function fn3(){
+	return window;
+	
+	}	
+
+/*alert(fn4());	
+function fn4(){
+	return; //undefined
+	};	*/
+	
+	
+alert(fn5());	
+function fn5(){
+	return 123;//这里就返回了，不会alert520
+	alert(520);
+	};
+</script>
+</head>
+
+<body>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+li{list-style:none;width:114px;height:140px;background:url(img/normal.png);float:left;margin-right:20px;}
+</style>
+<script>
+window.onload = function(){
+	var aLi = document.getElementsByTagName('li');
+	
+	
+	
+	for(var i=0;i<aLi.length;i++){
+		
+		aLi[i].onOff = true;  //给每个li添加一个开关，开关只能控制一个
+		aLi[i].onclick = function(){
+			if(this.onOff){  //背景不能判断，相对路径不能判断
+			this.style.background = 'url(img/active.png)';
+			this.onOff=false;
+			}else{
+				this.style.background = 'url(img/normal.png)';
+				this.onOff=true;
+				};
+			};
+		};
+	};
+</script>
+</head>
+
+<body>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+</body>
+</html>

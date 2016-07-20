@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+li{height:30px;border-bottom:1px solid #333;}
+</style>
+<script>
+window.onload = function(){
+	var oUl = document.getElementById('list');
+	var aLi = oUl.getElementsByTagName('li');
+	
+	
+	var arr =['昨天','今天','明天'];
+	
+	
+	for(var i=0;i<arr.length;i++){  //for循环里面参数用分号隔开
+		aLi[i].innerHTML = arr[i]; //参数i就是数组里的第0 ，1，2个
+			
+		aLi[i].onclick = function(){
+			alert(123);
+			}
+		}
+	};
+</script>
+</head>
+
+<body>
+<ul id="list">
+	<li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>

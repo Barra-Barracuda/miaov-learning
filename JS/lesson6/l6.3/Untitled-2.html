@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+alert(fn1);	 //注析也被显示了！！firefox不支持，定义全局变量和全局函数放到if for的外面
+if(true){
+	var a = 1;
+	function fn1(){
+	alert(123);  //13131313123
+	}
+	};
+	
+
+</script>
+</head>
+
+<body>
+</body>
+</html>

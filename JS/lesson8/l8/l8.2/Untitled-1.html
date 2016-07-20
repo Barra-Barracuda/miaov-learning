@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+fn1(1,2,3);           //实际传递的参数
+//function fn1(a,b,c){ //形参（可不写），形式上，abc这些名代表123
+//};
+	function fn1(){
+		//arguments =>[1,2,3] -- 实参的集合
+		//alert(arguments); //object Arguments
+		//alert(arguments.length);
+		//alert(arguments[arguments.length-2]);
+	
+	};
+	
+	//当函数的参数个数无法确定的时候用arguments
+	//alert(sum(1,2,3));
+	//alert(sum(1,2,3,4));
+	function sum(){
+		var n = 0;
+		for(var i=0;i<arguments.length;i++){
+			n+=arguments[i]; //n+每个数字的值
+			
+			};
+			return n;  //sum() = n ,n是最终的值
+		};
+		
+var a =1;	
+function fn2(a){
+	arguments[0] = 3;
+	alert(a);
+	var a =2;
+	alert(arguments[0]);
+	};	
+	fn2(a);
+	alert(a);
+</script>
+</head>
+
+<body>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="jquery-1.11.3.js"></script>
+<script>
+
+$(function(){
+/* 
+ $('#div1').on('click',{name:"hello"},function(ev){ //得到里面的数据data
+    //console.log(ev.data); //JSON
+    console.log(ev.data.name);
+ })
+*/
+
+$('#div1').on('click','span',{name:"hello"},function(ev){ //只有点击div1里面的span才触发
+    alert(123);
+})
+});
+
+</script>
+</head>
+
+<body>
+<div id="div1">div
+<span>span</span>
+</div>
+</body>
+</html>

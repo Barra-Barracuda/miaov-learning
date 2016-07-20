@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<script src="jquery-1.11.3.js"></script>
+<script>
+
+$(function(){
+	
+	$('#img1').on('zoomIn',function(){  //缩小
+		
+		$(this).css('width',200);
+		
+	});
+	
+	$('#img1').on('zoomOut',function(){  //放大
+		
+		$(this).css('width',700);
+		
+	});
+	
+	$('#img1').on('DOMMouseScroll',function(ev){
+		
+		if(ev.originalEvent.detail > 0){
+			$(this).trigger('zoomIn');
+		}
+		else{
+			$(this).trigger('zoomOut');
+		}
+		
+	});
+	
+	
+	
+});
+
+</script>
+</head>
+
+<body>
+<img src="1.jpg" id="img1">
+</body>
+</html>

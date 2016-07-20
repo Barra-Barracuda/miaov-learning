@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+.red { width:400px; border:10px solid #333; background:red; padding:20px; color:yellow; }
+.yellow { width:500px; border:5px solid #333; background:yellow; padding:10px; color:red; }
+</style>
+<script>
+window.onload= function(){
+	var oBtn1 = document.getElementById('btn1'); //要引号
+	var oBtn2 = document.getElementById('btn2');
+	var oP = document.getElementById('p1');
+	var oBtn3 = document.getElementById('btn3');
+	var oBtn4 = document.getElementById('btn4');
+	
+		oBtn3.onclick = function(){
+		/*oP.style.width = '300px';
+		oP.style.background = 'red';
+		oP.style.padding = '20px';
+		oP.style.color = 'yellow';
+		oP.style.border = '10px solid #ccc';
+		*/
+		oP.className = 'red'  /*把oP添加class就可以调用css样式了，class在JS里叫className*/
+		
+		};
+		
+		oBtn4.onclick =function(){
+			oP.className = 'yellow';
+			
+			};
+	
+	
+	
+	var num = 16;  //设置默认字体大小,全局变量
+	
+	oBtn2.onclick = function(){
+		//num=num+1;
+		if(num<22){ //字体大小不超过22，就递增
+		num++;  //递增
+		};
+		oP.style.fontSize = num + 'px';  //要加px ，font-size的横杠在JS中不能有
+		};
+	
+	oBtn1.onclick = function(){
+		if(num>12){
+		num--;
+		};
+		
+		oP.style.fontSize = num + 'px';
+		}	
+		
+	
+		
+	};
+</script>
+</head>
+
+<body>
+<input id="btn1" type="button" value="-" />
+<input id="btn2" type="button" value="+" />
+<input id="btn3" type="button" value="红" />
+<input id="btn4" type="button" value="黄" />
+<p id="p1">　据美国《侨报》报道，美国伊利诺伊大学教授宋晓东表示，“一早听到屠呦呦获得2015诺贝尔生理学或医学奖的消息，作为中国人他尤其感到兴奋和骄傲”。宋教授认为，屠教授及其团队当年从中医中药中的发现非常了不起，希望有更多国内杰出的工作得到国内、国际的认可。这一次的获奖对广大专心致志、持之以恒工作的科技人员是极大的鼓励，也能鼓励中国思考和探讨科技创新和评价体系。</p>
+</body>
+</html>

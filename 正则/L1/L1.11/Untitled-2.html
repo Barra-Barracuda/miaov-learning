@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload = function(){
+//^ :正则的最开始位置，就代表起始的意思
+//$ :正则的最后位置，就代表结束的意思	
+	
+	var aInput = document.getElementsByTagName('input');
+	
+	var re = /^[1-9]\d{4,11}$/; //[1-9]：^起始一定要是[1-9] 第一位不包括0;{4，11}除了第一位最少5-1位，最大12-1位 
+	
+	
+	aInput[1].onclick = function(){
+		if(re.test(aInput[0].value)){
+			alert('是qq号');
+			
+			}else{
+				alert('不是qq号');
+				
+				}
+		
+		};
+	
+	};
+
+</script>
+</head>
+
+<body>
+<input type="text" />
+<input type="button" value="确定"  />
+</body>
+</html>

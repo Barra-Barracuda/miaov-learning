@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+//test:正则去匹配字符串，匹配成功为真，反之为假
+//写法：正则.test(字符串)
+
+/*var str ='abcdef';
+
+var re = /b/;
+
+alert(re.test(str));//true*/
+
+//转移字符：
+//   alert('a\nb'); //\n换行 
+//   \t：制表符，为了在不使用表格的情况下，上下对齐，table的意思。
+//   \r：回车符，返回到这一行的开头，return的意思。
+//   alert('a\rb'); 
+
+//  \s:空格
+//  \S：非空格
+//  \d:数字
+//  \D:非数字
+//  \w:字符 （字母，数字，下划线）
+//  \W:非字符 (特殊字符，汉字)
+
+var str = '37482t9348791';
+
+var re = /\D/;
+
+if(re.test(str)){
+	alert('不全是数字');
+	}else{
+		alert('全是数字');
+		};
+</script>
+</head>
+
+<body>
+</body>
+</html>

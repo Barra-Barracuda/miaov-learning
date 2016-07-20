@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+#div1{width:200px;height:200px;background:red;margin:100px;}
+</style>
+<script>
+window.onload = function(){
+
+	var oDiv = document.getElementById('div1');
+	var oUl = document.getElementById('ul1');
+
+	
+		oDiv.ondragenter = function(){
+		  this.innerHTML = '可以释放了';
+			
+			};
+			
+		oDiv.ondragover = function(ev){//enter 和leave 之间连续触发
+		
+			
+			ev.preventDefault();  //要想触发drop事件，就必须在dragover当中阻止默认事件
+			
+			};	
+			
+		oDiv.ondragleave = function(){
+			this.innerHTML = '将文件拖拽到此区域';
+			
+			};
+			
+		oDiv.ondrop = function(ev){
+		 ev.preventDefault();
+		 
+		 var fs = ev.dataTransfer.files;
+		 
+		 //alert(fs.length);//[object fileList]  1
+		 
+		// alert(fs[0].type); //img/jpeg  txt  ...
+		
+		
+	/*	if(fs[0].type.indexOf('image')!=-1){
+			var fd = new FileReader(); //读取文件信息
+		
+		fd.readAsDataURL(fs[0]); //读取文件
+		
+		fd.onload = function(){
+			
+			var oLi = document.createElement('li');
+			var oImg = document.createElement('img');
+			oImg.src = this.result;
+			oLi.appendChild(oImg);
+			oUl.appendChild(oLi);
+			
+			};
+			
+			}else{
+				alert('不是图片');
+				
+				};*/
+		
+		for(var i=0;i<fs.length;i++){ //多张拖拽写循环
+			
+			if(fs[i].type.indexOf('image')!=-1){
+			var fd = new FileReader(); //读取文件信息
+		
+		fd.readAsDataURL(fs[i]); //读取文件
+		
+		fd.onload = function(){
+			
+			var oLi = document.createElement('li');
+			var oImg = document.createElement('img');
+			oImg.src = this.result;
+			oLi.appendChild(oImg);
+			oUl.appendChild(oLi);
+			
+			};
+			
+			}else{
+				alert('不是图片');
+				
+				};
+			
+			};
+		
+		};
+			
+	};
+</script>
+</head>
+
+<body>
+
+<div id="div1">将文件拖拽到此区域</div>
+<ul id="ul1">
+	
+</ul>
+
+</body>
+</html>

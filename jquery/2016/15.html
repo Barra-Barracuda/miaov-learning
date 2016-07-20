@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script src="jquery-1.11.3.js"></script>
+<style>
+div{width:100px;height:100px;background: red;position: absolute;}
+</style>
+<script>
+$(function(){
+
+/*
+var a = [];
+alert($.type(a)); //检测类型
+*/
+
+var b = function(){};
+//alert($.isFunction(b));
+
+//var c = 123;
+var c ='123';
+//alert($.isNumeric(c)); //true
+
+var d = [];
+//alert($.isArray(d));
+
+var e = window;
+//alert($.isWindow(e));
+
+var f = {};
+//alert($.isEmptyObject(f));
+
+var g = {};
+//var g = {name:'hello'};
+alert($.isPlainObject(g)); //对象自变量 {}
+
+})
+
+
+</script>
+</head>
+<body>
+	<div>div</div>
+</body>
+</html>

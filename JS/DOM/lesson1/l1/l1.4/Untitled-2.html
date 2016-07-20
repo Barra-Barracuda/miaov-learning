@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload = function(){
+	var oDiv = document.getElementById('div1');
+	
+	//alert(oDiv.style.width); //样式宽 100px
+	//alert(oDiv.clientWidth);//可视区宽 120(没有单位) 样式宽+padding
+	alert(oDiv.offsetWidth);//占位宽 122(没有单位)  样式宽+padding+border
+	
+	};
+</script>
+</head>
+
+<body>
+	<div id="div1" style="width:100px;height:100px;border:1px solid red;padding:10px;margin:10px;"></div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script>
+
+
+window.onload = function(){
+	var aT = document.getElementsByTagName('textarea');
+	var oInput = document.getElementById('input1');
+	
+
+	
+	oInput.onclick = function(){
+		
+		var re =/<\w+>/g; //w：字符数字下划线*/
+		
+			var re= /<[^>]+>/g; //<中间内容只要不是右尖括号就匹配成功>
+			
+			var re = /<[\w\W]+>/g; //所有的字符都包括了
+		
+	aT[1].value = aT[0].value.replace(re,'');
+		
+	};
+	
+};
+
+</script>
+</head>
+
+<body>
+替换前<br />
+<textarea>
+</textarea><br />
+替换后<br />
+<textarea>
+</textarea><br />
+<input type="button" value="确定" id="input1" />
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script src="jquery-1.11.3.js"></script>
+<style>
+</style>
+<script>
+$(function(){
+
+$('div').on('click',function(){
+    alert(123);
+})
+$('div').on('click.abc',function(){  //.abc 命名空间
+    alert(456);
+})
+//$('div').trigger('click.abc');// 456
+//$('div').trigger('click'); //123 456
+
+})
+
+</script>
+</head>
+<body>
+<div>div</div>
+</body>
+</html>

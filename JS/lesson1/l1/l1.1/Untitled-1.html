@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload=function(){
+	var oBtn = document.getElementById('btn1');
+	var oText = document.getElementById('text1');
+	var oSelect = document.getElementById('select1');
+	oBtn.onclick = function(){
+	//alert(oBtn.value);
+	//alert(oText.value);
+	//alert(oSelect.value);   //是oSelect的值
+	alert(oText.value + "在" + oSelect.value);
+	
+	};
+	};
+</script>
+</head>
+
+<body>
+<input type="text" id="text1" />
+<select id="select1">
+<option value="北京">北京</option>
+<option value="广州">广州</option>
+<option value="上海">上海</option>
+</select>
+<input type="button" id="btn1" value="按钮" />
+</body>
+</html>

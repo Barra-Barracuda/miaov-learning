@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script src="jquery-1.11.3.js"></script>
+<script>
+$(function(){
+$('div').click(function(){
+    $('span').off('click').click(function(){ //出现这种嵌套时候当点击div时再点击span会触发多次点击事件，所以先用off（）关掉上一次的事件
+        alert(1);
+    })
+})
+    })
+
+
+</script>
+</head>
+<body>
+	<div>div</div>
+    <span>span</span>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload = function(){
+	var aBtn = document.getElementsByTagName('input');
+	var aP = document.getElementsByTagName('p');
+	
+	var arr =['mm','dd','ee'];
+	
+	for(var i=0;i<aBtn.length;i++){  //循环生成index， 和点击事件
+		
+		aBtn[i].index = i; //创建自定义属性(索引值)相当于下标   //想建立“匹配”“对应”关系，就用索引值
+		
+		
+		aBtn[i].onclick = function(){
+			//alert(this.index);
+			//alert(arr[this.index]);    //this 是这个按钮，按钮的索引值=下标，就是0，1，2 ，就等于数组的下标0，1，2
+			this.value = arr[this.index];
+			aP[this.index].innerHTML = arr[this.index]; //aP不用添加索引值了，直接用按钮的
+			};
+		
+		};
+	};
+</script>
+</head>
+
+<body>
+<input type="button" value="btn1" />
+<input type="button" value="btn2" />
+<input type="button" value="btn3" />
+<p>a</p>
+<p>b</p>
+<p>c</p>
+</body>
+</html>

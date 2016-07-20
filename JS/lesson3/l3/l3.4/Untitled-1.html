@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+body{background:#333;}
+ul{padding:0;margin:0;}
+li{list-style:none;}
+#pic{width:400px;height:500px;position:relative;margin:0 auto; background:url(img/loader_ico.gif) no-repeat center #FFFFFF;}
+#pic img{width:400px;height:500px;}
+#pic ul{position:absolute;top:0;right:-50px;width:40px;}
+#pic .active{background:#FFCC33;}
+#pic li{width:40px;height:40px;margin-bottom:4px;background:#666;}
+#pic span,#pic p{width:400px;height:30px;line-height:30px;text-align:center;color:#fff;position:absolute;background:#000;}
+#pic span{top:0;}
+#pic p{bottom:0;margin:0;}
+
+</style>
+<script>
+window.onload = function(){
+	
+	var oDiv = document.getElementById('pic');
+	var oImg = document.getElementsByTagName('img')[0];
+	var oSpan = document.getElementsByTagName('span')[0];
+	var oP = document.getElementsByTagName('p')[0];
+	var oUl = document.getElementsByTagName('ul')[0];
+	var aLi = oUl.getElementsByTagName('li');
+	var oldLi = null; //1
+	
+
+	var arrUrl =['img/1.png','img/2.png','img/3.png','img/4.png'];
+	var arrText=['tu1','tu2','tu3','tu4'];
+	var num =0; //凡是有数组就设个0，方便初始化
+	
+	for(var i=0;i<arrUrl.length;i++){ //生成li
+		oUl.innerHTML += '<li></li>';
+		};
+		
+		oldLi = aLi[num]; //2
+	
+	//初始化
+	oImg.src = arrUrl[num];
+	oSpan.innerHTML = num+1 + '/' + arrText.length;
+	oP.innerHTML = arrText[num];
+	aLi[num].className = 'active';  //记得下标[num]
+	
+	for(var i=0;i<aLi.length;i++){
+		aLi[i].index = i;   //创建li的索引值
+		aLi[i].onclick = function(){
+			oImg.src = arrUrl[this.index];
+			oP.innerHTML = arrText[this.index];
+			oSpan.innerHTML = this.index+1 + '/' + arrText.length;
+			/* for(var j=0;j<aLi.length;j++){ //li的变化
+				
+				aLi[j].className = ''; //先全部清空再激活
+				};	*/
+				
+				oldLi.className = ''; //上一个清空 3
+				oldLi = this;  //把当前那个清空  4
+				
+				this.className = 'active';
+			
+			};
+		
+		};
+	
+	};
+</script>
+</head>
+
+<body>
+<div id="pic">
+	<img src="" />
+    <span>数量正在加载中...</span>
+    <p>文字说明正在加载中...</p>
+    <ul>
+    </ul>
+ </div>
+</body>
+</html>

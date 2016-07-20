@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script src="jquery-1.11.3.js"></script>
+<style>
+div{width:100px;height:100px;background: red;position: absolute;}
+</style>
+<script>
+$(function(){
+
+$('div').mouseover(function(){
+    $(this).stop().animate({ //这里用stop（）停止上一次运动，防止不断触发
+        width:200,
+        height:200
+    })
+}).mouseout(function(){
+    $(this).stop().animate({
+        width:100,
+        height:100
+    })
+})
+
+  })  
+
+
+
+</script>
+</head>
+<body>
+	<div>div</div>
+</body>
+</html>

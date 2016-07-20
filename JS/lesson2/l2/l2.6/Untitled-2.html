@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+div{width:50px;height:50px;background:red;position:absolute;top:0;left:0;font-size:30px;text-align:center;line-height:50px;color:#FFFFFF;}
+</style>
+<script>
+window.onload = function(){
+	var aDiv = document.getElementsByTagName('div');
+	var str ='';
+	for(var i=0;i<20;i++){
+	str += '<div>' + i + '</div>'
+	document.body.innerHTML = str; 
+		};
+		
+	var j = 0;
+    for(var i=0;i<aDiv.length;i++){
+        if(i > aDiv.length /2){  //长度的一半
+            aDiv[i].style.left = i * 50 +'px'; 
+            j = j + 2;
+            aDiv[i].style.top = i * 50 - j * 50 +'px';
+        }else{
+            aDiv[i].style.left = i*50 +'px'; 
+            aDiv[i].style.top = i*50 +'px';
+		}
+	}
+		
+		}
+</script>
+</head>
+
+<body>
+</body>
+</html>

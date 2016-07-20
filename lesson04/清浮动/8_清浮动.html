@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+.box{zoom:1;}
+.box:after{content:"";display:block; clear:both;}
+.box{margin:0 auto;border:10px solid #000;}
+.div{ width:200px;height:200px;background:red;float:left}
+.div1{ width:200px;height:200px;background:pink;float:left}
+
+/*
+	清浮动
+	1.给父级也加浮动
+	2.给父级加display:inline-block
+	3.在浮动元素下加<div class="clear"></div>
+	.clear{ height:0px;font-size:0;clear:both;}
+	4.在浮动元素下加<br clear="all"/>
+	
+	5. 给浮动元素的父级加{zoom:1;}
+	:after{content:""; display:block;clear:both;}
+	
+	**在IE6，7下浮动元素的父级有宽度就不用清浮动
+	
+	haslayout 根据元素内容的大小 或者父级的父级的大小来重新的计算元素的宽高
+	
+  display: inline-block
+  height: (任何值除了auto)
+  float: (left 或 right)
+  width: (任何值除了auto)
+  zoom: (除 normal 外任意值) 
+*/
+</style>
+</head>
+<body>
+<div class="box clear">
+	<div class="div"></div>
+	<div class="div1"></div>
+</div>
+</body>
+</html>

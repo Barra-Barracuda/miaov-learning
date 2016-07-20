@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload = function(){
+	var oForm = document.getElementById('form1');
+	//onsubmit:事件，当提交表单的时候触发
+	//submit()方法 提交表单
+	//onreset:事件，当提交表单重置的时候触发
+	
+	oForm.onsubmit = function(){
+		if(this.text1.value ==''){
+			alert('请输入内容');
+			return false;
+			};
+			
+		};
+		
+		oForm.onreset = function(){
+		
+			//alert('重置');
+			//return false;重置不了
+			var re = confirm('你确定要重置？');
+			//alert(re);
+			
+			return re; //是re就是true,true才返回重置,不是就是false
+			
+		};
+		
+		
+	/*	setTimeout(function(){
+			oForm.submit();
+			
+			},1000);*/
+	};
+</script>
+</head>
+
+<body>
+	<form id="form1" action="http://www.baidu.com"> <!--action是提交到哪里 -->
+    	<input type="text" name="text1" />
+        <input type="text" name="text2" value="11" />
+  		<input type="submit" name="dosubmit" value="提交" />
+        <input type="reset" name="soreset" value="重置" />
+     </form>
+</body>
+</html>

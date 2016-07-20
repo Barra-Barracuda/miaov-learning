@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+var s = ' miaov ';
+alert(s.charAt(3)); //charAt 是指字符串中的第几个字
+
+var fn = function(){
+	alert(1);
+	};
+	alert(fn); // 就是函数
+	
+function fn1(){alert(2);};
+//alert(fn1);
+fn1();
+
+var obj = window;
+alert(typeof obj); //object
+
+var arr = [1,2,3,4];
+alert(typeof arr); //object
+
+var obj = document;
+//alert(typeof obj); //object
+obj.abc = 123;  //不是空就可以添加自定义事件
+alert(document.abc); //也可以obj.abc
+
+obj.fn1 = function(){alert(1);};
+obj.fn1();
+
+var json ={name:'miaov',age:5,}
+alert(json.name + '今年' + json.age);
+
+var u;
+alert(typeof u); //undefined
+
+
+var a ='+0100';
+alert(Number(a)+100); //把a转换为数字
+
+var a1= '';
+alert(Number(a1)); //0
+
+var a2= true;
+alert(Number(a2)); //true1 false0
+
+var a4 =[];
+alert(Number(a4)); //0
+
+
+var a6 = null;
+alert(Number(a6)); //0
+
+
+var b = ' +0000100px';
+alert(parseInt(b)); //100 parseInt：只能转数字，解释整数（不保留小数点），从左到右，不是数字就终止
+
+var c = '123.53元';
+alert(parseInt(c)); //不会四舍五入
+
+var d = '123.53元';
+alert(parseFloat(d)); //不会四舍五入 ,保留小数点
+
+var d1 = '123.53.5.63元';
+alert(parseFloat(d1)); //123.53
+
+var d2 = '12元';
+alert(parseFloat(d2)); //12
+
+var d3 = '12元';
+alert(parseInt(d3,8)); //10 8进制
+
+var e1 = '12.6464元';  //验证整数还是小数
+if(parseInt(e1) == parseFloat(e1)){
+	alert(e1 + '是整数');
+	}else{
+		alert(e1 + '不是整数');
+		}
+/////////////////////////隐式类型转换/////////////////////
+//  -*/% 变成数字 ,+变成字符串，++--变成数字 ,><数字的比较、字符串的比较，！把右边的数据类型转成布尔值，==
+
+alert('200'-3);  //197
+alert('200'+3) //2003
+var f ='10';
+f++;
+alert(f) //11
+
+
+alert('10'>9); //true 数字之间按照大小来排
+alert('10'>'9'); //false 字符串之间比较按照编码大小来排
+
+alert(!true); //false
+alert(!100); //false
+
+alert('2' == 2) // true 最终的值
+alert('2' === 2) // flase 过程和最终的值
+
+//////////////////////NaN///////////////////////////////
+//NaN :not a number 不是个数字的数字类型
+//isNaN:不是数字
+//isNaN():判断某些值是不是数字 ，数字就false
+var g =Number('abc');
+alert(typeof(g)); //number
+if(g){alert('真');}
+else{alert('假');} //假
+alert(g === g); //false NaN和NaN与自己不想等！！！
+
+alert(isNaN(2)); //false
+alert(isNaN('sdfsf')); //true
+alert(isNaN('250'));  //根据Number()判断  '250'=>250=> false
+alert(isNaN(true));  //根据Number()判断  true=>1=> false
+alert(isNaN([]));  //根据Number()判断  []=>0=> false
+
+
+
+
+/////////////////////////////////////////////////////
+
+var b1 = true;
+alert(parseInt(b1)); //NaN
+
+var a8 ='100px';
+alert(Number(a8)); //NaN number是整体转换的
+
+var a7;
+alert(Number(a7)); //NaN 未定义
+
+
+var json = {abc:123};
+alert(Number(json)); //NaN json不能转
+
+
+var a5 =[1,2,3];
+alert(Number(a5)); //NaN 数组太多了。
+
+
+
+var a3 =function(){alert(1);};
+alert(Number(a3)); //NaN 函数、window、document不行。
+
+
+
+
+
+
+var n = null;
+//alert(typeof n); //object
+n.abc=123;
+alert(n.abc);   //！错误
+
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

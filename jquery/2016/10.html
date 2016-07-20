@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script src="jquery-1.11.3.js"></script>
+<script>
+$(function(){
+$(document).click(function(){
+    alert(123);
+})
+$('div').click(function(ev){
+ //这里会触发，因为冒泡了
+ ev.stopPropagation();
+});
+
+$(document).contextmenu(function(ev){ //右键菜单事件
+    //ev.preventDefault(); //阻止默认行为
+    return false; //阻止默认行为 + 阻止冒泡
+})
+
+    })
+
+</script>
+</head>
+<body>
+	<div>div</div>
+</body>
+</html>

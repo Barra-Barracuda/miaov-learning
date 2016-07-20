@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+li{list-style: none;}
+#content{height:300px;width:300px;border:2px solid grey;overflow:auto;}
+.fl span{float:left;}
+.fl img{float: left;}
+.fr span{float: right;}
+.fr img{float: right;}
+</style>
+<script>
+window.onload = function(){
+	var oDiv =document.getElementById('content');
+	var oImg = document.getElementById('img1');
+	var oText = document.getElementById('text1');
+	var oBtn = document.getElementById('btn1');
+	
+	var num = 0; 
+	
+    var onOff = true;
+	
+
+	
+	oImg.onclick = function(){
+				if(onOff){
+					oImg.src = "img/2.png";
+				}else{
+					oImg.src = "img/1.png";
+				}
+				onOff = !onOff;
+			}
+
+		
+	oBtn.onclick = function(){
+
+		if(!onOff){
+        
+		oDiv.innerHTML = '<li class="fr">'+oImg.outerHTML + '<span>'+oText.value+'</span>' + '<br/>' + oDiv.innerHTML+'</li>'; 
+		oText.value="";
+  }else{
+  	oDiv.innerHTML = '<li class="fl">'+oImg.outerHTML + '<span>'+oText.value+'</span>' + '<br/>' + oDiv.innerHTML+'</li>'; 
+		oText.value="";
+  }
+}
+}
+		
+</script>
+</head>
+
+<body>
+
+
+<div id="content"></div>
+<img src="img/1.png" alt="qq" id="img1" />
+<input type="text" id="text1" />
+<input type="button" value="发送" id="btn1" />
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+//var str = '5';
+//var str = 'a';
+//var str ='-1';
+
+
+
+if(str<='9' && str>='0'){ //-1 
+	alert('是数字类型字符串');
+	
+	}else{
+		alert('不是数字类型字符串');
+		}
+		
+		
+var str = 'l424saj6678dkl123';
+
+/*function findNum(str){
+	
+	var arr = [];
+	var tmp ='';
+	
+	for(var i=0;i<str.length;i++){
+		if(str.charAt(i)<='9' && str.charAt(i)>='0'){
+		//arr.push(str.charAt(i));
+		tmp +=str.charAt(i);
+		
+		}else{
+			if(tmp){
+				arr.push(tmp);
+				tmp='';
+				}
+			};
+	}
+	if(tmp){
+		arr.push(tmp);
+		tmp='';
+		
+		}
+	
+	return arr;
+	};		*/
+		
+		
+function findNum(str){
+	return str.match(/\d+/g);
+	}		
+		
+alert(findNum(str));		
+</script>
+</head>
+
+<body>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+var str = 'border-bottom-color'; //先分割，在处理
+
+/*function test(str){
+	var arr = str.split('-');//[border,bottom,color]
+	
+	for(var i=1;i<arr.length;i++){ //循环数组
+	arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].substring(1); //第一个变大写，然后拼接加上后面的字符  //[border,Bottom,Color]
+		
+		}
+		return arr.join(''); //参数('')就是没有分隔符
+		
+	}
+
+alert(test(str));*/
+
+function test(str){
+	var re =/-(\w)/g;
+	
+	return str.replace(re,function($0,$1){ //$0代表整体-(\w)，$1代表子项(\w)
+		
+		return $1.toUpperCase();
+		})
+	
+	}
+alert(test(str));	
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

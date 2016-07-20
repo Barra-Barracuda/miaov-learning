@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<script>
+window.onload = function(){
+	var oBody = document.body;  //html只有一种标签可以用这种方式获取
+	document.title = 123;
+	//document.body.innerHTML = 123;
+	
+	
+	var oUl = document.getElementsByTagName('ul')[0];
+	var oLi = oUl.getElementsByTagName('li');  //获得ul下的li
+	alert(oLi.length);
+	
+	oLi[2].onclick = function(){
+		alert(321);
+		};
+	};
+</script>
+<body>
+<ul>
+	<li></li>
+    <li></li>
+    <li>111111111111111</li>
+    <li></li>
+</ul>
+    
+</body>
+</html>

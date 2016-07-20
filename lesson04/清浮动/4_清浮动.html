@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+.box{ width:300px;margin:0 auto;border:10px solid #000;}
+.div{ width:200px;height:200px;background:red;float:left;}
+.clear{ height:0px;font-size:0;clear:both;}
+/*
+	清浮动
+	1.给父级也加浮动
+	2.给父级加display:inline-block
+	3.在浮动元素下加<div class="clear"></div>
+	.clear{ height:0px;font-size:0;clear:both;}
+*/
+</style>
+</head>
+<body>
+<div class="box">
+	<div class="div"></div>
+    <div class="clear"></div>
+</div>
+</body>
+</html>

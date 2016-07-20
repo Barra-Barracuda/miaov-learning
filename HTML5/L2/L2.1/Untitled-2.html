@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload = function(){
+	var oDiv = document.getElementById('div1');
+	
+	alert(oDiv.classList); //box1 box2 box3;类似数组的对象 可以用循环，有长度
+	
+	oDiv.classList.add('box4');
+	
+	oDiv.classList.remove('box2');
+	
+	oDiv.classList.toggle('box5'); //看看有没有，有就添加，没就删除
+	};
+</script>
+</head>
+
+<body>
+<div id="div1" class="box1 box2 box3">div</div>
+</body>
+</html>

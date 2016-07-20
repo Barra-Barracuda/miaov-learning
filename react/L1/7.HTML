@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<script src="JS/react-with-addons.min.js"></script>
+<script src="JS/react-dom.min.js"></script>
+<script src="JS/browser.min.js"></script>
+</head>
+<body>
+<div id="demo"></div>
+<script type="text/babel">
+var ListComponent = React.createClass({
+	render:function(){
+		return(
+			<ul>
+			{this.props.listArr.map(function(item,index){
+				return <li key={index}>{item}</li>  
+			})
+		}
+		</ul>
+		)
+	}
+});
+
+var FirstComponent = React.createClass({
+	mixins:[React.addons.LinkedStateMixin],
+	getInitialState:function(){
+		return{
+mes:this.props.value, //默认值
+listArr:this.props.listArr,
+btnValue:'發佈内容'
+}
+},
+componentWillMount:function(){
+	alert('will');
+},
+render:function(){
+	return(
+		<div>            
+		<h2 style={{color:this.state.color}}>{this.props.title}</h2>
+		<input type="text" defaultValue={this.props.value} />
+		<br/><br/>
+		<input type="text" ref="text_input" valueLink={this.linkState('mes')} />
+		<p>{this.state.mes}</p>
+		<input type="button" value={this.state.btnValue} />
+		<input type="button" onClick={this.addItemHandle} value={this.props.submit} />
+		<ListComponent listArr = {this.state.listArr}/>
+
+
+		</div>
+		)
+
+},
+componentDidMount:function(){
+
+	window.setTimeout(function(){
+		this.setState({
+		color:'red'
+	});
+	}.bind(this),1000);
+	
+},
+addItemHandle:function(){
+	var value = this.refs.text_input.value;
+    var newArr = this.state.listArr.concat([value]) //把用户输入的东西放进数组里
+    this.setState({listArr:newArr})
+
+    //console.log(this.refs.text_input.value);
+}
+
+});
+
+var obj = {
+	title:'456',
+	submit:'提交',
+	value:'请输入留言',
+	listArr:[1,2,3,4,5,6,7,8]
+}
+
+ReactDOM.render(<FirstComponent {...obj} />,//{...obj}是把obj对象存进props里
+	document.getElementById('demo'),
+	function(){
+		console.log('成功');
+	})
+</script>
+</body>
+</html>

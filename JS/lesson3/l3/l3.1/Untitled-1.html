@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload = function(){
+	var aBtn = document.getElementsByTagName('input');
+	//aBtn[0].abc = 123; //自定义属性
+	//alert(aBtn[0].abc);
+	
+	for(var i=0;i<aBtn.length;i++){ //JS可以在任何HTML添加任何属性
+		aBtn[i].abc = 123;
+		};
+		alert(aBtn[0].abc);
+	};
+</script>
+</head>
+
+<body>
+<input type="button" value="按钮" />
+<input type="button" value="按钮2" />
+<input type="button" value="按钮3" />
+</body>
+</html>

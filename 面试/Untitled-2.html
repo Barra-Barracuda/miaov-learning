@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+var str = 'sdjksfssscfssdd';
+
+/*function test(str){
+	
+	var obj ={};
+	var num =0;
+	var value ='';
+	
+	for(var i=0;i<str.length;i++){ //str的长度为15
+		
+		if(!obj[str[i]]){ //因为JSON里面一开始没有数组，就创建一下,当再走到重复的就不走这里了
+			obj[str[i]] = [];
+			}
+			
+			
+		obj[str[i]].push(str[i]); //然后将字符塞进数组集合里
+		
+		
+		
+		}
+		
+	for(var attr in obj){
+      
+		if(num<obj[attr].length){
+			num = obj[attr].length; //num就是最大那个，因为只有大于长度才走if
+			value = obj[attr][0]; //因为里面都是s了，所以这个选第一个就行了
+			}
+		
+		}
+		return '最多的字符是：' + value + '，出现了:' + num;
+	};
+	
+alert(test(str));	*/
+
+function test(str){
+	
+	var arr= str.split('');
+	arr.sort(); //sort是数组的方法
+	str = arr.join('');
+	
+	var num = 0;
+	var value = 0;
+	
+	var re = /(\w)\1+/g; //(5)\1 =55; \1就是重复前一个数字，加号表示可以出现多个
+	
+	str.replace(re,function($0,$1){
+		
+		if(num<$0.length){
+			num = $0.length;
+			value =$1;
+			}
+		});
+	return '最多的字符是：' + value + '，出现了:' + num;
+	};
+alert(test(str));
+</script>
+</head>
+
+<body>
+</body>
+</html>

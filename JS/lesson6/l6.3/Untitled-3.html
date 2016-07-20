@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload = function(){
+	var aBtn = document.getElementsByTagName('input');
+	
+	for(var i=0;i<aBtn.length;i++){
+		aBtn[i].onclick = function(){
+			//aBtn[i].style.background = 'yellow'; //错误 ， i =3 =数组长度 ，不要直接用i
+		alert(i);	//undefined ,预解析var i = ...
+			for(var i=0;i<aBtn.length;i++){
+				aBtn[i].style.background = 'yellow'
+				};
+			};
+		};
+	};
+</script>
+</head>
+
+<body>
+<input type="button" value="按钮1" />
+<input type="button" value="按钮2" />
+<input type="button" value="按钮3" />
+
+</body>
+</html>

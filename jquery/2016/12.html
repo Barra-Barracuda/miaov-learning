@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script src="jquery-1.11.3.js"></script>
+<style>
+div{width:100px;height:100px;background: red;position: absolute;}
+</style>
+<script>
+$(function(){
+
+var disX =0;  //鼠标到元素的小距离
+var disY =0;
+var $div = $('div');
+
+ $div.on('mousedown',function(ev){
+    disX = ev.pageX - $(this).offset().left; //鼠标到元素的小距离 = 鼠标到页面的距离 - 物体到页面的距离 
+    disY = ev.pageY - $(this).offset().top;
+
+    $(document).on('mousemove.drag',function(ev){ //这里必须要用document ，不然有移动鼠标时候出现bug
+        $div.css('left',ev.pageX - disX);
+        $div.css('top',ev.pageY - disY);
+    })
+
+    $(document).on('mouseup.drag',function(){
+        //$(this).off('mouseup.drag').off('mousemove.drag');
+        $(this).off('.drag');  //用off可以直接写命名空间
+    })
+
+    return false; //防止选中文字拖拽出现bug
+})
+
+
+})
+
+
+</script>
+</head>
+<body>
+	<div>div</div>
+</body>
+</html>

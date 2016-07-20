@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+//工厂方式：封装函数
+function createPerson(name){
+	//1.原料
+ var obj = new Object();
+ //2.加工
+ obj.name = name;
+ obj.showName = function(){
+	 alert(this.name)
+	 };
+	 //3.出厂
+	 return obj;
+	};
+	createPerson('小明').showName(); //return obj 返回 等于createPerson（）
+	createPerson('小强').showName();
+</script>
+</head>
+
+<body>
+</body>
+</html>

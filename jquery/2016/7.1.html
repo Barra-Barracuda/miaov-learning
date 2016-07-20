@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script src="jquery-1.11.3.js"></script>
+<style>
+#div1{background: red;width:100px;height:100px;padding:10px;border:1px solid red;margin:1px;display:none;}
+</style>
+<script>
+$(function(){
+    //alert($('#div1').get(0).offsetWidth); //0 js获取不了隐藏的宽度
+     //alert($('#div1').width()); //100 可以获取
+
+     //alert(document.documentElement.clientHeight); //可视区的高
+     //alert($(window).height()); //可视区的高
+
+     //alert(document.body.scrollHeight); //页面高
+     //alert($(document).height()); //页面高
+
+     $(document).click(function(){
+        //alert(document.body.scrollTop);
+        //alert($(document).scrollTop()); //滚动距离
+        $(document).scrollTop(300);
+
+        //$(document).scrollTop() == $(document).height() - $(window).height(); //当最底部时候的滚动距离
+     })
+})
+</script>
+</head>
+<body style="height:2000px;">
+	<div id="div1">div</div>
+</body>
+</html>

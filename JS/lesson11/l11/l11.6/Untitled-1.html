@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+div { width:300px; height:200px; border:1px solid #333; background:#fff; padding:20px; line-height:40px;word-wrap:break-word;overflow:auto; }
+span { padding:5px 15px; font-family:微软雅黑;}
+</style>
+<title>无标题文档</title>
+</head>
+
+<body>
+<div id="div1">
+<!--	<span style="background:#FFC;">文</span><span style="background:#CC3;">字</span><span style="background:#6FC;">内</span><span style="background:#9C9;">容</span>-->
+</div>
+
+<input type="text" />
+<input type="button" value="按钮" />
+
+<script>
+var oDiv = document.getElementById('div1');
+var aInp = document.getElementsByTagName('input');
+var arrColor =['#FFC','#CC3','#6FC','#9C9'];
+
+
+aInp[1].onclick = function(){
+	var str = aInp[0].value; //'妙味课堂'
+	var arr = str.split(''); //['','','','']
+	
+	for(var i=0;i<arr.length;i++){//把数组妙味课堂用span包起来
+		arr[i] ='<span style="background:' + arrColor[i%arrColor.length] +';">' +arr[i] + '</span>'; //颜色选择用i%长
+		};
+		oDiv.innerHTML += arr.join(''); //join把数组拼到一起变成字符串
+	};
+
+var arr = ['aa','bb','cc'];
+//alert(typeof arr.join()); //string  'aa' +','+'bb'+','+'cc'   不加参数默认是逗号连接
+alert(arr.join(''));//aabbcc
+//alert(arr.join('-')); //aa-bb-cc
+//alert(arr.join().length); // 8
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+//search:正则去匹配字符串，如果匹配成功，就返回痞妃成功的位置，如果匹配错误就返回-1；
+//search的写法：字符串.search(正则)
+//正则中的默认：是区分大小写  ；如果不区分大小写，在正则的最后加标识i
+
+var str='abcdef';
+
+var re = /bcd/;
+
+var ee = /C/i;
+
+var rr = new RegExp('F','i');
+
+//alert(str.search(re)); //1，搜索到首字母的位置
+
+//alert(str.search(ee));//2
+
+alert(str.search(rr));//5
+</script>
+</head>
+
+<body>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+<script>
+var n = 5;
+
+/*function show(n){
+	var arr = [];
+	
+	return (function(){
+		
+		arr.unshift(n);
+		n--;
+		
+		if(n!=0){
+		arguments.callee(); //调用匿名函数
+		}
+		
+		return arr;
+		})();
+	
+	}*/
+	
+	
+function show(n){
+	var arr = [];
+	
+	arr.length = n+1; //join只有4个，所以加1个
+	
+	var str = arr.join('a');
+	
+	var arr2 = [];
+	
+	str.replace(/a/g,function(){
+		
+		arr2.unshift(n--);
+		
+		})
+	return arr2;
+	
+	}	
+	
+alert(show(n));
+</script>
+
+<body>
+</body>
+</html>

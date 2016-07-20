@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+var arr= ['c','d','a','e'];
+arr.sort(); //字符编码排序
+//alert(arr);
+
+var arr2 =[4,6,1,3,8,2,78];
+//arr2.sort();
+//alert(arr2); //1,2,3,4,6,78,8
+
+arr2.sort(function(a,b){ //比较函数，参数放2个数值进行比较
+	return a-b; //b-a由大到小，a-b小到大
+	});
+
+//alert(arr2);
+
+var arrWidth =['345px','23px','10px','1000px'];
+arrWidth.sort(function(a,b){
+return	parseInt(a)-parseInt(b);	
+	})
+//alert(arrWidth);
+
+var arr3 = ['1','2','3','4'];
+arr3.sort(function(){
+	return Math.random()-0.5; //Math.random的值是在0-1之间，大于0.5就不交换，小于交换
+	
+	});
+	//alert(arr3);
+	
+//alert(Math.round(3.5)); //4 小数点四舍五入
+
+//alert(Math.round(Math.random()*10));
+
+//alert(Math.round(Math.random()*5+5)); // 5-10   
+
+//alert(Math.round(Math.random()*5+15)); //15-20 
+
+//alert(Math.round(Math.random()*10+10)); //10-20 
+
+//alert(Math.round(Math.random()*80+20)); //20-100  //Math.random()*最大值-最小值+最小值
+
+/*var x = 42;
+var y = 46;
+
+alert(Math.round(Math.random()*(y-x)+x)); */
+
+/*var x =3;
+
+alert(Math.ceil(Math.random()*x)); // 1-3 ，Math.ceil向上去整，就是无论小数点是几都进一位，除了小数点为0*/
+
+var arr4 = [1,2,3];
+var arr5 = [4,5,6];
+var arr6 = [7,8,9];
+
+//alert(arr4.concat(arr5,arr6)); //把数组合在一起
+
+arr4.reverse(); //把数组顺序反转
+//alert(arr4);
+
+
+var str1 = 'abcdef';
+alert(str1.split('').reverse().join(''));//把字符串变成数组,再反转，再把数组变字符串
+
+</script>
+</head>
+
+<body>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+//match:正则去匹配字符串，如果匹配成功就返回匹配成功的数组，如果不成功就返回null
+//match的写法：字符串.match(正则)；
+//正则默认：正则匹配成功就会结束，不会继续匹配  ；如果想全部查找，就要加标识g（全局匹配）
+//量词：匹配不确定的位置
+// + ：至少出现一次
+
+var str = 'haj123sdk54hask33dkhalsd879';
+
+//var re = /\d/;[1] 
+
+//var re = /\d/g; [1],[2],[3],[5].....
+
+//var re = /\d\d/g; //只找2位数字 [12],[54],[33],[87]
+//var re = /\d\d\d\d/g; //null
+
+//var re = /\d+/g; //[123],[54],[33],[879]
+
+alert(str.match(re));// 
+</script>
+</head>
+
+<body>
+</body>
+</html>

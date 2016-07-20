@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin: 0; padding: 0;font-family:宋体;font-size:12px;}
+
+ol,ul{list-style:none}
+
+.clear:after {content:""; display:block;clear:both;}
+.clear{zoom:1}
+
+table {border-collapse: collapse; border-spacing: 0}
+
+fieldset, img { border: 0}
+
+a{text-decoration:none;}
+
+img{border:none; vertical-align:top;}
+
+.wrap{
+	width:366px;   /* 高度让内容撑开 */
+	background:#f4fafb;
+	margin:40px auto;
+}
+
+.head{
+	height:23px;
+	background:url(../../lesson06/img2/headBg.gif) no-repeat;
+}
+.title{
+	background:url(../../lesson06/img2/titleBg.gif) no-repeat 6px 4px;  /* 下面的设置并不影响的背景设置 */
+	line-height:22px;
+	padding-left:30px;   /* 设置line-height就不要设置太多的padding值 */
+	color:#294852;
+}
+.content{
+	padding:0 7px 2px 5px; /* 这是难点 宽度继承父元素wrap，就设置padding就好 */
+}
+.content li{
+	padding:13px 0 9px 0;
+	vertical-align:top;
+}
+
+.pic {
+	border:1px solid #c8c4d3;
+	padding:2px;
+	float:left;
+}
+.text{
+	width:240px;
+	float:right;
+}
+.text h3{
+	line-height:24px;
+}
+.text p{
+	line-height:20px;
+}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+	<div class="head">
+    	<h2 class="title">外媒评论精选</h2>
+    </div>
+    	<ul class="content">      <!-- 直接用ul代替div包内容都可以了因为内容都一样 -->
+        	<li  class="clear">      <!-- 因为li是包下面a img div元素的父元素，所以在这里clear，不能用ul清 -->
+            	<a href="#" class="pic">
+                	<img src="../../lesson06/img2/pic.gif" alt="jialebi"/>
+                </a>
+            	<div class="text"> 
+            		<h3>《加勒比海盗4》--商业味浓郁</h3> 
+                	<p>本集《加勒比海盗》讲述了杰克船长受英王所托寻找“不老泉”，与他...[<a href="#">详细</a>]</p>
+            	</div>
+            </li>
+            
+            <li  class="clear">
+            	<a href="#" class="pic">
+                	<img src="../../lesson06/img2/pic.gif" alt="jialebi"/>
+                </a>
+            	<div class="text"> 
+            		<h3>《加勒比海盗4》--商业味浓郁</h3> 
+                	<p>本集《加勒比海盗》讲述了杰克船长受英王所托寻找“不老泉”，与他...[<a href="#">详细</a>]</p>
+            	</div>
+            </li>  
+            
+            <li  class="clear">
+            	<a href="#" class="pic">
+                	<img src="../../lesson06/img2/pic.gif" alt="jialebi"/>
+                </a>
+            	<div class="text"> 
+            		<h3>《加勒比海盗4》--商业味浓郁</h3> 
+                	<p>本集《加勒比海盗》讲述了杰克船长受英王所托寻找“不老泉”，与他...[<a href="#">详细</a>]</p>
+            	</div>
+            </li>  
+        </ul>  
+ </div>        
+</body>
+</html>

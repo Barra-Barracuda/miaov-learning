@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload = function(){
+	var aBtn = document.getElementsByTagName('input');
+	var arr = ['a','b','c','d'];
+	
+	
+	for(var i=0;i<aBtn.length;i++){
+		aBtn[i].num = 0; //创建自定义属性
+		aBtn[i].onclick = function(){
+			
+		this.num++ ;
+				
+		if(this.num === arr.length){ //this num 最大是等于 4  ，刚好是数组长度
+				this.num = 0;
+				};
+			this.value = arr[this.num];
+		
+			
+			};
+};
+		};
+</script>
+</head>
+
+<body>
+<input type="button" value="0" />
+<input type="button" value="0" />
+<input type="button" value="0" />
+</body>
+</html>

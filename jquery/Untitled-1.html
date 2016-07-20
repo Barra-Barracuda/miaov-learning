@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+body{
+    height:2000px;
+}
+.div5{
+	border:20px solid black;
+	padding:20px;
+	width:200px;
+	margin:20px;
+}
+</style>
+<script type="text/javascript" src="../../jquery-1.11.3.min.js">
+</script>
+</head>
+
+<body>
+<div id="div1" class="box">2222</div>
+<div id="div2" class="box">223123222</div>
+<span class="box">22224</span>
+<ul>
+	<li></li>
+    <li class="box">打发手动阀发射点发射点发</li>
+    <li>更多敢死队敢死队</li>
+    <li id="l" class="box">54564897974984894</li>
+    <li title="hello">131344<span>243</span></li>
+    <li title="hello"></li>
+    
+</ul>
+<div class="div3" title=""></div>
+<div class="div4" title="diao">12313</div>
+<div class="div5"></div>
+<div class="div6">888888888888888</div>
+<div class="div7">77777777777777</div>
+<div class="div8">99999999999999</div>
+<div class="div9">000000000000</div>
+<div class="div10">101010</div>
+<div class="div11">1111111111111</div>
+
+<script>
+window.onload = function() {
+	var oDiv = document.getElementById('div1');
+	
+	oDiv.onclick = function() {
+		alert(this.innerHTML)
+	};
+};
+	
+/* $(function (){                           /* window.onload = $() 
+	var oDiv = $('#div2');
+	
+	oDiv.click(function(){              /*  不用写等于号，直接用括号包括。 oDiv.click()  方法函数化 
+		alert($(this).html());          /*    this 等于 $(this)  innerHTML 等于 html() 
+		});
+	});  */
+
+$(function (){
+	$('#div2').click(function(){  /* 省了getElementById */
+		alert($(this).html());
+		});
+	});
+
+$('div')
+$('#div1')
+$('li').has('span').css('color','grey') /* has 是二级查看有没有包含的 */
+$('#div1').next().css('color','grey')
+$('#div2').prev().css('color','blue')
+$('ul').find('.box').eq(1).css('color','orange') /* 二级  eq是代表有box的第几个，不是数组的第几个 */
+$('.box').css('background','red');
+$('li:first').css('background','blue');  /* li:even odd first last */ 
+$('li:eq(2)').css('background','pink');
+$('li').filter('.box').css('background','green');
+$('li').filter('[title=hello]').css('background','purple');
+$('ul').children().css('border','1px solid green');
+alert($('#l').index()); /* 是在当前元素所在的列表的位置 */
+alert($('.div5').width());
+alert($('.div5').innerWidth()); /* 宽度+padding */
+alert($('.div5').outerWidth()); /* 宽度+padding+border */
+alert($('.div5').outerWidth(true)); /*宽度+padding+border+margin  true不用加引号*/
+$('#div2').insertBefore('#div1');
+$('#div2').before('#div1') /* div2的前面一定是 div1.后续操作是div2$('#div2').before('#div1').css('background','red')变的是div2 */
+$('span').attr('id','box0');
+$('#div1').insertAfter('#box0');
+$('.div6').appendTo('.div5');   /*div6 跑到 div5的里面 */
+$('.div8').prependTo('.div7'); /* div8 跑到 div7 里面的最前面 */
+$('.div9').remove();
+$('.div10').on('click mouseover',function(){ /* 可以同时写多个事件 */
+    alert(123);
+$('.div10').off('mouseover');
+})
+$('.div11').on({
+    'click':function(){ /* json写法 */
+        alert(123);
+    },/* 逗号隔开 */
+    'mouseover':function(){
+        alert(456);
+    }
+});
+
+
+
+
+
+
+/*$(function(){});
+html(123);
+click(function(){});*/
+
+$('.div3').css('background','red').html('hello').click(function(){
+	alert(123);
+	})
+$('.div4').html('hello').css('background','red');
+alert($('.div4').html());
+
+$(function (){
+alert($('.div4').attr('title'));
+$('.div3').attr('title','456'); /* 先赋值给title 再 alert */
+alert($('.div3').attr('title'));
+$('.div3').attr('id',('shit'));
+});
+$(document).click(function(){
+    alert($(window).scrollTop());
+});
+
+$('div').click(function(ev){
+	//ev:event对象
+	//ev.pageX(相对于文档，clientX(相对于可视区)
+	//ev.which:keycode
+	
+	ev.preventDefault(); //阻止默认事件
+	ev.stoppropagation(); //阻止冒泡的操作
+	
+	return false; //阻止默认事件 + 阻止冒泡的操作
+	
+	});
+
+</script>
+
+</body>
+</html>

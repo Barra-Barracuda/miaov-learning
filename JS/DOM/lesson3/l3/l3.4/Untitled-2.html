@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+//call 函数下的一个方法,第一个参数可以改变函数执行过程中的内部this的指向（不想改变就写null）,第二参数开始就是原来函数的参数列表
+
+function fn1(a,b){
+	alert(this);
+	alert(a+b);
+	}
+	
+//fn1(1);//window	
+fn1.call(1,10,20);	 //调用函数 fn1(); == fn1.call(); //参数里写1，this就指向了参数
+fn1.call(null,10,20);//window 30
+</script>
+</head>
+
+<body>
+</body>
+</html>

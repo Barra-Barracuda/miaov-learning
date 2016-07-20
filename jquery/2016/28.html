@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+div{width:100px;height:100px;background:red;}
+</style>
+<script src="jquery-1.11.3.js"></script>
+<script>
+
+$(function(){
+/*
+var cb = $.Callbacks(); //参数有 once memory unique stopOnFalse
+
+setTimeout(function(){
+alert(1);
+cb.fire();
+},1000)
+
+cb.add(function(){
+    alert(2);
+})
+*/
+
+var dfd = $.Deferred();
+
+setTimeout(function(){
+    alert(1);
+    //dfd.resolve(); //解决  状态
+    dfd.reject(); //未解决
+},1000);
+
+dfd.done(function(){ //成功
+    alert(2);
+})
+
+dfd.fail(function(){ //失败
+    alert(3);
+})
+
+});
+
+</script>
+</head>
+
+<body>
+<div>div</div>
+
+</body>
+</html>

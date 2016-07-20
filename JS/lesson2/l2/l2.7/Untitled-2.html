@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>  /*aLi 这是一个类数组的元素集合，
+			js不能对一组数据进行操作。只能对某个元素进行操作。
+			如果想对一组数据进行操作，建议用循环。*/
+window.onload = function(){
+	var oUl = document.getElementById('list'); //找到list
+	var aUl = oUl.getElementsByTagName('ul');  //找到list下的ul
+	
+	for(var i=0;i<aUl.length;i++){  //因为li是类数组，要用循环。
+	 aLi=aUl[i].getElementsByTagName('li'); //在ul下找到所有li ，如果在这里加样，是每个ul下加样式。
+	for(var j=0;j<aLi.length;j++){ //在li下所有的li加边框，不加这个循环的话，会是第一个Ul的第一个li，第二个Ul的第二个Li加样式
+		aLi[j].style.border ='1px solid red';
+	};
+		};
+	};
+</script>
+</head>
+
+<body>
+<ul id="list">
+    <li>
+        <h2>我的好友</h2>
+        <ul>
+            <li>1<li>莫涛</li></li>
+            <li>张森</li>
+            <li>杜鹏</li>
+        </ul>
+    </li>
+   <li><ol><li>no</li></ol> </li>
+    <li>
+        <h2>我的坏友</h2>
+        <ul>
+            <li>莫1涛</li>
+            <li>张2森</li>
+        </ul>
+    </li>
+    <li>
+        <h2>黑名单</h2>
+        <ul>
+            <li>0莫涛</li>
+            <li>1张森</li>
+        </ul>
+    </li>
+</ul>
+</body>
+</html>

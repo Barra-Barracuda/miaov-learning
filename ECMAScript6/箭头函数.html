@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//箭头函数：用来作为回调函数使用。
+    //函数体内的this对象，绑定定义时所在的对象，不是使用时所在的对象。
+    //不可以当作构造函数，不可以用new
+    //不存在arguments。
+/*
+function f(a){
+    return a+1;
+};
+*/
+
+
+/*
+var f = a => a+1;
+console.log(f(1));
+*/
+
+//var f = (a,b) =>a+b;
+var f = (a,b) =>{return a+b};
+console.log(f(1,2));
+    </script>
+</body>
+</html>

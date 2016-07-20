@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <style>
+        div{
+            width:0;
+            height:0;
+            border-width:20px;
+            border-style: solid;
+            border-color:transparent transparent red transparent;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+
+	<script>
+/*
+function cat(){
+}
+cat.prototype={
+food:"fish",
+say: function(){
+
+alert("I love "+this.food);
+}
+}
+
+
+var blackCat = new cat;
+blackCat.say();
+
+var whiteDog = {food:'bone'};
+blackCat.say.call(whiteDog);
+*/
+
+/*
+function Parent1(name){
+       
+        
+       this.name = 'doubi';
+
+       this.age = 32;
+      
+    };
+  
+  var child1 = {};
+
+  Parent1.call(child1);
+  alert(child1.age);
+*/
+
+  
+
+
+/*
+    function CreateName(name){
+       
+        
+       this.name = name;
+
+       this.showname = function(){
+           alert(this.name);
+       };
+      
+    };
+    CreateName.prototype.type = '人';
+    CreateName.prototype.showname1 = function(){
+            alert('这是人'); 
+        };
+
+
+    var s1 = new CreateName('xiaoming');
+s1.showname();
+*/
+
+/*
+function CreateName(name){
+    this.name = name;
+}
+CreateName.prototype.showname = function(){
+    alert(this.name);
+}
+var s1 = new CreateName('小明');
+s1.showname();
+*/
+
+/*
+var arr = [1,2,3,4,5];
+
+Array.prototype.sum = function(){
+        var result = 0;
+    for(var i=0;i<this.length;i++){
+        result += this[i];
+    };
+    return result;
+};
+
+alert(arr.sum());
+*/
+/*
+ function Parent(){
+        this.name = 'wang';
+    }
+
+    function Child(){
+        this.age = 28;
+        //this.name = 'li';
+    }
+    Child.prototype = new Parent();//继承了Parent，通过原型
+
+    var demo = new Child();
+    alert(demo.age);
+    alert(demo.name);//得到被继承的属性
+*/
+
+/*
+ function animal(){
+    this.species = '动物';
+ } 
+
+ function cat(name,color){
+    animal.call(this,arguments);
+    this.name = name;
+    this.color = color;
+ }
+
+ var s1 = new cat('小黄','yellow');
+ alert(s1.name);
+ alert(s1.species);
+*/
+
+/*
+function animal(){
+    this.species = '动物';
+};
+
+function cat(name,color){
+    this.name = name;
+    this.color = color;
+}
+
+cat.prototype = new animal();
+cat.prototype.constructor = cat; //要指回原来那里 constructor指向它们的构造函数。
+var cat1 = new cat('小黄','yellow');
+alert(cat1.species);
+*/
+
+var Chinese = {nation:'中国'};
+var Doctor = {career:'医生'};
+
+function object(o){
+    function F(){}; 
+    F.prototype = o; //防止继承链的紊乱
+    return new F();
+}
+
+var Doctor = object(Chinese);
+Doctor.career = '医生';
+
+alert(Doctor.nation);
+
+var z;
+
+function f(x,y){
+    //return z = {x:x,y:y};
+    return z = {x,y};
+}
+f(1,2);
+console.log(z);
+
+
+
+    </script>
+</body>
+</tml>

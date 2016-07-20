@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+<script>
+//对象和函数都是引用的关系
+/*var a =[1,2,3];
+var b = a ;
+b.push(4);
+
+alert(a); //1,2,3,4
+alert(b); //1,2,3,4*/
+
+var a =[1,2,3];
+var b = a ;
+b = [1,2,3,4];
+
+alert(a); //1,2,3
+alert(b); //1,2,3,4
+</script>
+<body>
+</body>
+</html>

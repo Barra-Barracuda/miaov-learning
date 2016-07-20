@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload = function(){
+	var oText = document.getElementById('text1');
+	
+/*	var name='value';
+	oText.name; //有问题
+	oText[name]; //ok*/
+	
+	//元素.getAttribute(属性名称); 方法，获取指定元素的指定属性的值
+	//元素.setAttribute(属性名称，属性值); 方法，给指定元素的指定属性的设置值
+	//元素.removeAttribute(属性名称); 方法 移除指定的元素的指定的属性
+	
+	//alert(oText.getAttribute('value'));	
+	//oText.setAttribute('value','fuck');
+	//oText.removeAttribute('value');
+	
+	//1.用点和中括号的方式，非标准下能获取自定义属性，标准不能 
+	//2.用getAttribute可以获取自定义属性
+	//alert(oText._name_);//undefined
+	//alert(oText["_name_"]);//undefined
+	//alert(oText.getAttribute('_name_')); //妙味
+	
+	var oImg = document.getElementById('img1');
+	//alert(oImg.src); //file:***/**/***/.gif
+	//alert(oImg['src']); //file:***/**/***/.gif
+	//alert(oImg.getAttribute('src'));// ***.gif , ie7还是像上面一样绝对路径
+	
+
+	
+	};
+</script>
+</head>
+
+<body>
+	<input _name_="妙味" style="width:100px;" type="text" id="text1" value="11"/>
+    <img src="bdlogo.gif" id="img1"/>
+</body>
+</html>

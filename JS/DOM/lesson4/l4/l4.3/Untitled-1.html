@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+//event.keyCode:数字类型 键盘按键的值 键值
+   //ctrlKey,shiftKey,altKey 布尔值
+   	//当一个事件发生的时候，如果 ctrl || shift || alt 是按下的状态，返回true ， 否则false
+
+document.onkeydown = function(ev){
+	
+	//alert(1);
+	var ev = ev || event;
+	//alert(ev.keyCode); 
+	
+	};
+document.onclick = function(ev){
+	var ev = ev || event;
+	alert(ev.ctrlKey); //按住再点击为true
+	}
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

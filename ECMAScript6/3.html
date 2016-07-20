@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    div{display:none;}
+    .show{display:block;}
+    .active{background-color:yellow;}
+
+    </style>
+</head>
+<body>
+
+    <script>
+/*
+   const a = 1;
+   var a = 2;
+   console.log(a); //报错，已经定义了一个常量a
+*/
+
+    const a = {
+        name:'hi'
+    }
+    a.name = 'hello';
+    console.log(a.name); //常量保存的是一个对象，里面的值可以被修改
+    
+    </script>
+</body>
+</html>

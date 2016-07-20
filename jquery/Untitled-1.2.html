@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script src="../../jquery-1.11.3.min.js"></script>
+<style>
+#div1{width:100px;height:100px;background:red;}
+#div2{width:100px;height:100px;background:yellow;}
+#div3{width:100px;height:100px;background:red;}
+#div4{width:100px;height:100px;background:red;}
+</style>
+<script>
+$(function(){
+ $('#div1').hover(function(){
+	 $(this).css('background','blue');
+	 //$('#div2').hide(1000);
+	 //$('#div2').fadeOut(1000);
+	 //$('#div2').slideUp(1000);
+	 $('#div2').fadeTo(1000,0.1);
+	 },function(){
+		 $(this).css('background','red');
+		// $('#div2').show(1000);
+		//$('#div2').fadeIn(1000);
+		//$('#div2').slideDown(1000);
+		$('#div2').fadeTo(1000,1)
+		 })
+		 
+		$('#div3').click(function(){
+		$(this).animate({width:300},2000).delay(1000).animate({height:300},2000)
+			/*$(this).animate({width:300},4000,'linear',function(){
+				$(this).animate({height:300});}); */
+			
+				//animate()：第一个参数：{} json ,运动的值和属性。第二个参数：时间。第三个参数：运动形式（默认：swing(慢快慢)，linear(匀速)）。第四个参数：回调函数
+		$('#div4').click(function(){
+			//$('#div3').stop(true); //暂停所有运动参数
+			//$('#div3').stop(true,true); // 可以立即停止到指定的目的点
+			$('#div3').finish(); //立即停止到所有指定的目的点
+			})	
+			})
+			
+		$('ul').delegate('li','click',function(){ //事件委托
+			$(this).css('background','red')
+			$('ul').undelegate(); //只可以点一个
+			})	
+			$('#div5').on('click',{name:'hello'},function(ev){
+				//alert(ev.target); //[object HTMLDivElement]
+				//alert(ev.data.name);   //data指的是大括号里面的，name就是hello
+				alert(ev.type); //事件 
+				})
+			
+			
+			
+		})
+</script>
+</head>
+
+<body>
+<div id="div1"></div>
+<div id="div2"></div>
+
+<div id="div3"></div>
+<div id="div4"></div>
+<ul>
+	<li>333333333333</li>
+    <li>333333333333</li>
+    <li>333333333333</li>
+    <li>333333333333</li>
+</ul>
+<div id="div5">555555555555</div>
+</body>
+</html>

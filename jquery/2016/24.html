@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="jquery-1.11.3.js"></script>
+<script>
+
+$(function(){
+
+
+    $('#img1').on('zoomIn',function(){
+        $(this).css('width',200);
+    });
+
+    $('#img1').on('zoomOut',function(){
+        $(this).css('width',600);
+    })
+
+$('#img1').on('DOMMouseScroll',function(ev){ //滚轮事件 只有火狐才能触发
+ // alert(ev.originalEvent.detail);//detail 是滚轮向上向下的值
+
+ if(ev.originalEvent.detail>0){
+    $(this).trigger('zoomIn');
+ }else{
+    $(this).trigger('zoomOut');
+ }
+})
+
+
+});
+
+</script>
+</head>
+
+<body>
+<img src="1.jpg" id="img1"/>
+</body>
+</html>

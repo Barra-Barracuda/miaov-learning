@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+var w1 = new worker('test.js');
+w1.postMessage('hi');
+w1.onmessage = function(ev){
+	alert(ev.data);
+	}
+</script>
+</head>
+
+<body>
+</body>
+</html>

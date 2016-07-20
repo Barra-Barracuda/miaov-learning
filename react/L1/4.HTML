@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="JS/react-with-addons.min.js"></script>
+    <script src="JS/react-dom.min.js"></script>
+    <script src="JS/browser.min.js"></script>
+</head>
+<body>
+    <div id="demo"></div>
+    <script type="text/babel">
+
+      var FirstComponent = React.createClass({
+        mixins:[React.addons.LinkedStateMixin],
+        getInitialState:function(){
+            return{
+                mes:this.props.value //默认值
+            }
+        },
+        render:function(){
+                    return(
+            <div>            
+            <h2>{this.props.title}</h2>
+            <input type="text" defaultValue={this.props.value} />
+            <br/><br/>
+            <input type="text" valueLink={this.linkState('mes')} />
+            <p>{this.state.mes}</p>
+            <input type="button" value="发布内容" />
+            <input type="button" value={this.props.submit} />
+            </div>
+            )
+           
+            },
+        
+      });
+
+        var obj = {
+        title:'456',
+        submit:'提交',
+        value:'请输入留言'
+        }
+
+        ReactDOM.render(<FirstComponent {...obj} />,//{...obj}是把obj对象存进props里
+        document.getElementById('demo'),
+        function(){
+                console.log('成功');
+        })
+    </script>
+</body>
+</html>

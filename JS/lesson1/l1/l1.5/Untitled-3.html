@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+div{width:100px;height:100px;border:1px solid red;}
+</style>
+<script>
+window.onload= function(){
+	var oAttr = document['getElementById']('attr'); 
+	var oVal = document.getElementById('val');
+	var oBtn = document.getElementById('btn1');
+	var oDiv = document.getElementById('div1');
+	
+	//JS中允许“.”替换成“[]"
+	oBtn['onclick'] = function(){ //这里的中括号有引号。
+		//oAttr.value //width ,height,background
+		//oVal.value  // red ,200px;
+		oDiv.style[oAttr.value]=oVal.value; //多属性值用中括号就可以,[]里面的值可以随便写，不用引号,因为是x.x格式，一个就要引号  
+		//oDiv.style.width = oVal.value; //.的后面的值不能修改
+		}
+	
+	}
+</script>
+<title>无标题文档</title>
+</head>
+
+<body>
+请输入属性名称:<input id="attr" type="text" /><br/>
+请输入属性值:<input id="val" type="text" /><br/>
+<input id="btn1" type="button" value="确定" />
+<div id="div1"></div>
+</body>
+</html>

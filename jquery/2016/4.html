@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script src="jquery-1.11.3.js"></script>
+<script>
+$(function(){
+    $('li').each(function(i,elem){
+        //elem.style.background = 'red';
+       // $(elem).css('background','red');
+       $(this).css('background','red'); //this指向elem
+        var alpha = ['aaa','bbb','ccc','ddd'];
+        $(elem).html(alpha[i]);
+
+       /* 
+        if(i==2){
+            return false; //等于js的break跳出
+        }
+        alert(i);*/
+
+        
+    })
+alert($('li').first().get(0).innerHTML);
+})
+</script>
+</head>
+<body>
+	<ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>

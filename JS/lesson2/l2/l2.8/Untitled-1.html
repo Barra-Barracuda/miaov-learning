@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+div{width:100px;height:100px;border:1px solid #333;}
+</style>
+<script>
+window.onload = function(){
+	var oDiv = document.getElementById('div1');
+	var oBtn = document.getElementById('btn1');
+	
+	oDiv.onclick=function(){
+		//oDiv.style.width ='200px';
+		oDiv.style.cssText ='width:200px;height:200px;background:red;'
+		}
+	
+	oBtn.onclick = function(){
+		//oDiv.style.cssText = 'width:100px;'
+		oDiv.style.cssText = '';
+		};
+};
+</script>
+</head>
+
+<body>
+<div id="div1">123</div>
+<input id="btn1" type="button" value="按钮" />
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+/*fn1(100,'px');
+function fn1(a,b){
+	alert(a+b);
+	}*/
+	
+/*fn2('mm3');
+fn2('dd2');
+function fn2(a){
+	alert(a.charAt(2));
+	}*/
+	
+/*fn3(function(){alert(1);});
+function fn3(fn){
+fn();}*/
+
+/*fn3(function(a){alert(a);});
+function fn3(fn){
+fn(100);} //因为fn就是代表整个function（a）...而里面的参数就是传到里面的参数里了，100进去a里面了
+*/
+
+/*function fn4(){ //4
+	alert(4);
+	};
+	
+fn3(fn4); //fn4 = fn  //3
+function fn3(fn){ //2
+	fn();  //1
+	};*/
+	
+/*fn5(window,document);
+function fn5(w,d){
+	w.onload = function(){
+		d.body.innerHTML = 'ssssssa';
+		};
+	};*/
+	
+fn1(100);
+fn1('miaov');
+fn1(function(){alert(1);});
+
+function fn1(a){
+	if(typeof a ==='number' && a===a){ //NaN不等于自己
+		alert(a);
+		}else if(typeof a ==='string'){
+			alert(a.charAt(4));
+			}else if(typeof a ==='function'){
+				a(); //不用再写alert了，因为这里直接调用
+				};
+	};
+</script>
+</head>
+
+<body>
+</body>
+</html>

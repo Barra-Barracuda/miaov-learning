@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+body,p,h1,h2,h3,h4,h5,h6,dl,dd{margin:0; font-size:12px;/* font-family:XX; */}
+ol,ul{list-style:none;padding:0;margin:0;}
+a{text-decoration:none;}
+img{border:none;}
+
+html{
+	cursor:url(hand.cur),pointer;  /*记得设置第二参数*/
+}
+div{
+	width:600px;
+	height:60px;
+	background:#e8e8e8;
+	text-align:center;
+	margin:90px 100px;
+}
+div a{
+	text-decoration:none;
+	background-color:#ffffff;
+	color:#333333;
+	border:1px solid #cdcdcd;
+	padding:0px 8px 0px 9px;
+    line-height:28px;      /*因为上一页和后面的数字高度不一致所以加line-height；行高就是padding的上+下的高度，不加会往上飘 就是选项框的高度*/
+	display:inline-block;  /*这个要留意*/
+}
+div a:hover{
+	border:1px solid red;
+}
+div a#active{
+	background-color:#fcf9ea;
+	cursor:text;
+	border:1px solid #cdcdcd;
+}
+</style>
+</head>
+
+<body>
+<div id="xuanxiang">
+<a href="#">上一页</a>
+<a href="#">1</a>
+<a href="#">2</a>
+<a href="#" id="active">3</a>
+<a href="#">4</a>
+<a href="#">5</a>
+<a href="#">6</a>
+<a href="#">7</a>
+<a href="#">下一页</a>
+
+</div>
+</body>
+</html>

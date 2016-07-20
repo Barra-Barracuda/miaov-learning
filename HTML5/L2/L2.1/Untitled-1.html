@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload = function(){
+	//var oDiv = document.querySelector('#div1');
+	//var oDiv = document.querySelector('[title=hello]');
+	//var oDiv = document.querySelector('.box'); //只能选择一组中的第一个元素
+	var oDiv = document.querySelectorAll('.box'); //获取一组元素，要用循环每个添加
+	
+	for(var i=0;i<oDiv.length;i++){
+	oDiv[i].style.background = 'red';
+	};
+};
+</script>
+</head>
+
+<body>
+<div id="div1" title="hello" class="box">div</div>
+<div class="box">div2</div>
+</body>
+</html>

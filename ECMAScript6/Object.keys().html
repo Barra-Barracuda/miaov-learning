@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    "use strict"
+    var obj = {
+        a:1,
+        b:2
+    };
+
+   // console.log(Object.keys(obj));//['a','b']
+   console.log(Reflect.ownKeys(obj));//['a','b'] 获取key值
+    </script>
+</body>
+</html>

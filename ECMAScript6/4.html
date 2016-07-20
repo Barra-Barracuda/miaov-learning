@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    div{display:none;}
+    .show{display:block;}
+    .active{background-color:yellow;}
+
+    </style>
+</head>
+<body>
+
+    <script>
+   /* 
+ var arr = [1,2,3];
+ var [a,b,c] = arr;
+ console.log(a,b,c);
+ */
+
+/*
+ var obj = {
+    foo:function(){},
+    o:{},
+    arr:[],
+    str:'abc'
+ }
+
+var {foo,arr,str,o} = obj;
+
+console.log(foo,arr,str,o);
+*/
+/*
+var x = 1;
+var y = 2;
+
+var [x,y] = [y,x];
+console.log(x,y);
+*/
+
+/*
+var s = '顶';
+alert(s.repeat(10));
+
+*/
+
+var name = 'hello';
+var age = 20;
+
+//var str = '你的名字是：'+name+',你的年龄是:'+age+'';
+
+var str = `你的名字是：${name},你的年龄是:${age}`;
+console.log(str);
+console.log(str.includes('的'));
+console.log(str.startsWith('你'));
+console.log(str.endsWith('0'));
+
+
+
+    </script>
+</body>
+</html>

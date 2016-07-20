@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+var arr = [ '100px', 'abc'-6, [], -98765, 34, -2, 0, '300', , function(){alert(1);}, null, document, [], true, '200px'-30,'23.45元', 5, Number('abc'), function(){ alert(3); }, 'xyz'-90 ];
+
+fn1();
+function fn1(){
+	for(var i=0;i<arr.length;i++){
+		if(typeof arr[i] === 'string'){
+			alert(arr[i]);
+			};
+		};
+	};
+</script>
+</head>
+
+<body>
+</body>
+</html>

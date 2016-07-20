@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+
+<script>
+window.onload = function(){
+var oUl = document.getElementById('list'); 
+var aUl = oUl.getElementsByTagName('ul');  
+var aLi = aUl.getElementsByTagName('li');
+
+aLi.style.border ='1px solid red';  
+​
+};
+</script>
+</head>
+
+<body>
+<ul id="list">
+    <li>
+        <h2>我的好友</h2>
+        <ul>
+            <li>小李</li>
+            <li>小张</li>
+            <li>小明</li>
+        </ul>
+    </li>
+
+    <li>
+        <h2>基友</h2>
+        <ul>
+            <li>小E</li>
+            <li>小D</li>
+        </ul>
+    </li>
+    <li>
+        <h2>黑名单</h2>
+        <ul>
+            <li>6666</li>
+            <li>2333</li>
+        </ul>
+    </li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+//cookie:存储数据，当用户访问某个网页的时候，我们就可以通过cookie来像访问者电脑上存储数据，
+//1.不同浏览器存放的cookie位置不一样，也是不能通用的
+//2.cookie的存储室以域名进行区分
+//3.cookie的数据可以设置名字的
+//4.一个域名下存放的cookie的个数是有限制的，不同浏览器存放的个数不一样
+//5.每个cookie存放的内容大小也有限制的，不同浏览器存放个数不一样
+
+//document.cookie = '名字 = 值';
+
+
+//如果我们想长时间存放一个cookie。需要在设置这个cookie的时候同时给他设置个过期的时间。
+//cookie默认是临时存储的，当浏览器关闭进程的时候自动销毁；
+
+//document.cookie = '名称=值；expires=' + 字符串格式的时间;
+
+//内容最好编码存放，encodeUR
+
+//alert(encodeURI('你好')); //%E4%BD%A0%E5%A5%BD
+//alert(decodeURI('%E4%BD%A0%E5%A5%BD'));
+
+//var oDate = new Date();
+
+//oDate.setDate(oDate.getDate()+5);//来访者的天数+5天
+
+//oDate.toGMTString(); //转换成日期字符串
+
+/*document.cookie = 'username=' + encodeURI('leo\n你好') + ';expires=' + oDate.toGMTString(); //chrome不能访问，隐私保护
+document.cookie = 'age=32';*/
+
+//alert(document.cookie);//username=leo; age=32  //用分号带一个空格隔开，
+//alert(decodeURI(document.cookie));
+
+/*document.cookie = 'username=leo;expires=' + oDate.toGMTString(); 
+document.cookie = 'age=32';*/
+
+function setCookie(key,value,t){
+	var oDate =new Date();
+	oDate.setDate(oDate.getDate()+t);
+	document.cookie = key +'=' + value +';expires=' + oDate.toGMTString();
+	
+	}
+
+function getCookie(key){
+	var arr1 = document.cookie.split('; ');
+	
+	for(var i=0;i<arr1.length;i++){
+		var arr2 = arr1[i].split('=');
+		if(arr2[0] == key){
+			return decodeURI(arr2[1]);
+			
+			};
+		
+		
+		};
+	
+	};
+	
+function removeCookie(key){
+	setCookie(key,'',-1);
+	
+	};
+
+	
+setCookie('sex','男','10');
+//alert(getCookie('age'));	
+removeCookie('username');
+removeCookie('age');
+removeCookie('sex');
+
+alert(document.cookie);
+</script>
+</head>
+
+<body>
+</body>
+</html>

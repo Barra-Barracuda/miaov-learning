@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+
+
+
+    <script>
+     var arr2 = Array.of(5); //把参数当做数组来传进去，避免了new Array()只有一个参数是的bug.
+    //console.log(arr2);
+   
+    var arr3 = [1,2,3,4,5];
+    /*
+    var n = arr3.find(function(value,index){ //找出第一个符合条件的数组元素
+     //   console.log(arguments);
+        return value<3;
+    })
+    console.log(n); //1
+    */
+    var n = arr3.findIndex(function(value,index){ //找出第一个符合条件的数组元素
+     
+        return value<3;
+    })
+    console.log(n); //0
+    </script>
+</body>
+</html>

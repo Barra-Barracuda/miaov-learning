@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script src="jquery-1.11.3.js"></script>
+<style>
+div{width:100px;height:100px;background: red;position: absolute;}
+</style>
+<script>
+$(function(){
+
+function show(a,b){
+    alert(a);
+    alert(b);
+    alert(this);
+}
+//show.call(document); //把this指向document
+//$.proxy(show,document)(3,4); //把show函数的this指向document  后面的括号是执行，参数传参，当然可以写到第三个参数里,分开写也行
+//$.proxy(show,document,3,4)();
+//$.proxy(show,document,3)(4);
+
+
+$(document).on('click',$.proxy(show,window,3,4));
+})
+
+
+</script>
+</head>
+<body>
+	<div>div</div>
+</body>
+</html>

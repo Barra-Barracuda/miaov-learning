@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+#tab div{ width:200px; height:200px; border:1px #000 solid; display:none;}
+#tab .active{ background:red;}
+</style>
+<script src="jquery-1.11.3.js"></script>
+<script>
+
+//自定义事件:
+
+//beforeChange
+
+//afterChange
+
+
+$(function(){
+
+	//$('#tab').tabs();
+	
+	$('#tab').tabs({
+		heads : ['体育','娱乐','新闻','视频'],
+		bodys : ['体育11111111','娱乐123123123','新闻fffffff','视频ffffffggggg'],
+		events : 'mouseover'
+	});
+	
+	$('#tab').on('beforeChange',function(){
+		alert( $('#tab').find('div:visible').html() );
+	});
+	
+	$('#tab').on('afterChange',function(){
+		alert( $('#tab').find('div:visible').html() );
+	});
+	
+});
+
+(function($){
+	
+	var defaults = {
+		heads : ['1','2','3'],
+		bodys : ['1111111','2222222','3333333'],
+		events : 'click'
+	};
+	
+	var settings = {};
+	var $parent = null;
+	
+	function fnTab(options){
+		
+		$parent = this;
+		
+		settings = $.extend(settings , defaults , options);
+		
+		create();
+		bind();
+		
+	}
+	
+	function create(){
+		
+		for(var i=0;i<settings.heads.length;i++){
+			var $input = $('<input type="button" value="'+ settings.heads[i] +'">');
+			if(i==0){
+				$input.attr('class','active');
+			}
+			$parent.append( $input );
+		}
+		
+		for(var i=0;i<settings.bodys.length;i++){
+			var $div = $('<div>'+ settings.bodys[i] +'</div>');
+			if(i==0){
+				$div.css('display','block');
+			}
+			$parent.append( $div );
+		}
+		
+	}
+	
+	function bind(){
+		
+		$parent.find('input').on(settings.events,function(){
+			
+			$parent.trigger('beforeChange');
+			
+			$parent.find('input').attr('class','');
+			$(this).attr('class','active');
+			$parent.find('div').css('display','none');
+			$parent.find('div').eq( $(this).index() ).css('display','block');
+			
+			$parent.trigger('afterChange');
+			
+		});
+		
+	}
+	
+	$.fn.extend({
+		tabs : fnTab
+	});
+	
+})(jQuery);
+
+</script>
+</head>
+
+<body>
+<div id="tab">
+	<!--<input class="active" type="button" value="1">
+    <input type="button" value="2">
+    <input type="button" value="3">
+    <div style="display:block">1111111</div>
+    <div>2222222</div>
+    <div>3333333</div>-->
+</div>
+</body>
+</html>

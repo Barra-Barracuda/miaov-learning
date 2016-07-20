@@ -1,0 +1,103 @@
+  <!doctype html>
+  <html>
+  <head>
+    <meta charset="utf-8">
+    <title>无标题文档</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+      body{margin-top: 46px;} /*防止遮挡*/
+      .navbar-default{
+        background:linear-gradient(to bottom,#086ed5,#055db5)
+      }
+      .navbar-brand{
+        margin-top:-6px;
+
+      }
+      .input-group-addon{
+        border:1px solid #045bb2;
+        border-top-right-radius:4px;
+        border-bottom-right-radius:4px;
+        box-shadow:0 1px 2px rgba(0,0,0,.05),inset 0 1px 1px rgba(255,255,255,.15);
+        box-sizing:border-box;
+        outline:0;
+        width:40px;
+        height:36px;
+        background:linear-gradient(to bottom,#0e7bef,#0d73da);
+        margin-top:-1px
+      }
+
+      .navbar-nav a{
+       color:white !important;
+     }
+     .border-line{
+      border:0px;
+     }
+
+     .navbar-btn{
+      border:1px solid #045bb2;
+      border-top-right-radius:4px;
+      border-bottom-right-radius:4px;
+      box-shadow:0 1px 2px rgba(0,0,0,.05),inset 0 1px 1px rgba(255,255,255,.15);
+      box-sizing:border-box;
+      outline:0;
+      background:linear-gradient(to bottom,#0e7bef,#0d73da);
+    }
+.navbar-toggle{
+  background:white;
+}
+   
+  </style>
+  
+</head>
+
+<body style="height:2000px">
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+
+    <div class="container">
+
+   
+
+      <div class="navbar-header"><!--加个父级防止logo在小分辨率消失了-->
+     <button class="navbar-toggle" data-toggle="collapse" data-target="#zhihuCollpase">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+       <span class="icon-bar"></span>
+     </button>
+
+        <a href="#" class="navbar-brand"><img src="zhihu.png"></a>
+      </div>
+      <div class="collapse navbar-collapse border-line" id="zhihuCollpase">
+      <form class="navbar-form navbar-left border-line" style="margin-top:0">
+        <div class="input-group" style="margin-top:7px">
+          <input class="form-control" style="width:326px;" type="text" placeholder="搜索你感兴趣的内容..." />
+          <button type="submit" class="input-group-addon"><span class="glyphicon glyphicon-search" style="color:white"></span></button>
+        </div>
+      </form>
+      <ul class="nav navbar-nav navbar-left border-line" style="margin-top:-3px">
+        <li><a href="#">首页</a></li>
+        <li><a href="#">话题</a></li>
+        <li><a href="#">发现</a></li>
+        <li><a href="#">消息</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right" style="margin-top:-5px">
+      <li>
+      <a href="#">
+        <img src="https://pic2.zhimg.com/1e788fa05_s.jpg"/>
+        <span>吴讲得</span></a>
+        </li>
+      </ul>
+      <button type="button" class="btn btn-primary navbar-btn navbar-right" style="margin-top:6px">提问</button>
+    </div>
+   </div>
+  </nav>
+
+</div>
+
+<script src="js/jquery-1.11.3.min.js"></script> 
+<script src="js/bootstrap.js"></script>
+</body>
+</html>

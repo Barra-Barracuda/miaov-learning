@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script src="jquery-1.11.3.js"></script>
+<style>
+</style>
+<script>
+$(function(){
+
+$('ul').delegate('li','click',function(ev){ //事件委托，方便为后续的操作便利
+    $(this).css('background','red');
+   //$(ev.delegateTarget).css('background','yellow'); //如果想操作ul 就用ev下的delegateTarget属性
+   //$(ev.delegateTarget).undelegate(); //取消事件委托
+})
+
+$('input').click(function(){
+ $li = $('<li>hello</li>');
+ $('ul').append($li);
+})
+
+})
+
+</script>
+</head>
+<body>
+<input type="button" value="添加" />
+	<ul>
+    <li>1111</li>
+    <li>1111</li>
+    <li>1111</li>
+    <li>1111</li>
+    </ul>
+</body>
+</html>

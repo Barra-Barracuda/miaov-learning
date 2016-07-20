@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script src="jquery-1.11.3.js"></script>
+<style>
+div{width:100px;height:100px;background: red;position: absolute;}
+</style>
+<script>
+$(function(){
+/*
+var a = {name:'hello'};
+
+var b ={};
+
+$.extend(b,a,{age:12}); // 将a的值都给b 对象复制 浅拷贝（单层拷贝）
+
+b.name = 'hi';
+
+//alert(a.name);
+//alert(b.name);
+*/
+
+var a = {name:{age:20}};
+var b = {};
+//$.extend(b,a); //浅拷贝
+$.extend(true,b,a); //深拷贝
+b.name.age = 30;
+alert(a.name.age); //浅拷贝：30 深拷贝：20
+
+})
+
+
+</script>
+</head>
+<body>
+	<div>div</div>
+</body>
+</html>

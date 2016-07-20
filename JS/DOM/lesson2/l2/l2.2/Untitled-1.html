@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload = function(){
+	var oDiv = document.getElementById('div1');
+	var oDiv2 = document.getElementById('div2');
+	
+	addClass(oDiv,'box1');
+	removeClass(oDiv2,'box');
+	
+	function addClass(obj,className){
+		
+		if(obj.className == ''){
+			obj.className = className; //没有className就添加className
+			}else{
+				var arrClassName = obj.className.split(' ');
+				var _index =arrIndexOf(arrClassName,className);
+				
+				if(_index == -1){
+				obj.className += ' ' + className;
+				}
+				}
+		
+		};
+		
+		function removeClass(obj,className){
+			if(obj.className != ''){
+				var arrClassName = obj.className.split(' ');
+				var _index =arrIndexOf(arrClassName,className);
+				
+				if(_index !=-1){
+					arrClassName.splice(_index,1);
+					obj.className = arrClassName.join(' ');
+					
+					};
+				};
+			
+			};
+		
+		function arrIndexOf(arr,v){//如果class一样的话
+			for(var i=0;i<arr.length;i++){
+				if(arr[i]  == v){
+					return i;
+					}
+				}
+				
+				return -1;
+			};
+		
+		
+		
+	};
+</script>
+</head>
+
+<body>
+	<div id="div1" class="box"></div>
+    <div id="div2" class="box box1"></div>
+    
+</body>
+</html>

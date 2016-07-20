@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload = function(){
+	var oForm = document.getElementById('form1');
+	//name：可以用name的属性获取访问input
+	//onchange:当值发生改变的时候触发，有兼容性问题;text:当光标离开的时候如果内容有变化就触发;radio/checkbox：标准下点击的时候只要值变了就会触发，非标准下焦点离开的时候如果值变了就会触发
+	
+	//alert(oForm.text1.value);可以用name的属性获取访问input
+	oForm.text1.onchange = function(){ //输入值有改变并鼠标移开才会触发，
+		alert(this.value);
+		
+		}
+	
+	oForm.sex[0].onchange = function(){
+		//alert(1);
+		
+		};
+	
+	oForm.a[0].onchange = function(){
+		alert(1);
+		
+		};
+	
+	//alert(oForm.city.value);//select标签的value值是被选中的那个
+	
+	oForm.city.onchange = function(){
+		alert(this.value);
+		};
+	
+	oForm.btn.onclick = function(){
+		//alert(oForm.sex[0].checked);
+		
+		for(var i=0;i<oForm.sex.length;i++){
+			if(oForm.sex[i].checked){
+				alert(oForm.sex[i].value + '是选中了');
+				}else{
+					alert(oForm.sex[i].value + '是非选中了');
+					}
+			};
+			
+			for(var i=0;i<oForm.a.length;i++){
+			if(oForm.a[i].checked){
+				alert(oForm.a[i].value + '是选中了');
+				}else{
+					alert(oForm.a[i].value + '是非选中了');
+					}
+			};
+		
+		};
+	};
+</script>
+</head>
+
+<body>
+	<form id="form1">
+    	<input type="text" name="text1" value="内容"/>
+        <input type="radio" name="sex" value="男" />男 <!--必须同组写相同的name属性 -->
+        <input type="radio" name="sex" value="女" />女
+        
+        <input type="checkbox" name="a" value="html" />html
+        <input type="checkbox" name="a" value="css" checked/>css
+        <input type="checkbox" name="a" value="javascript" />javascript
+        
+        <select name="city">
+        	<option value="">请选择城市</option>
+            <option value="北京">北京</option>
+            <option value="上海" selected>上海</option>
+         </select>
+            
+        <input type="button" value="按钮" name="btn" />
+     </form>
+</body>
+</html>

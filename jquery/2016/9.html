@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script src="jquery-1.11.3.js"></script>
+<script>
+$(function(){
+   $('div').click(function(ev){
+    //alert(ev.pageX); //鼠标的坐标 :相对整个页面
+    //alert(ev.clientX); //鼠标的坐标 : 相对于可视区的坐标 
+
+   })
+
+   $(document).keydown(function(ev){
+    //alert(ev.which); //按下的键值
+    //alert(ev.ctrlKey); 
+    //alert(ev.keyCode);
+   })
+
+   $(document).click(function(ev){
+    alert(ev.target); //目标源
+   })
+
+
+    })
+
+</script>
+</head>
+<body>
+	<div>div</div>
+</body>
+</html>

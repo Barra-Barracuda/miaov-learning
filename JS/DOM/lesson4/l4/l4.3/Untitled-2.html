@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload = function(){
+	var oText = document.getElementById('text1');
+	var oUl = document.getElementById('ul1');
+	
+	oText.onkeyup = function(ev){
+		//alert(this.value); //用onkeydown会延迟，第一次是空的
+		
+		var ev = ev || event;
+		
+		if(this.value != ''){
+			
+			if(ev.keyCode == 13 && ev.ctrlKey){
+			
+			var oLi = document.createElement('li');
+			oLi.innerHTML = this.value;
+			
+			if(oUl.children[0]){
+				oUl.insertBefore(oLi,oUl.children[0]);
+				}else{
+					oUl.appendChild(oLi);
+					};
+			
+			}
+		};
+		
+		};
+	
+	};
+</script>
+</head>
+
+<body>
+	<input type="text" id="text1" />
+    <ul id="ul1"></ul>
+</body>
+</html>

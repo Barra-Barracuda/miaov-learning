@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+#div1{
+	width:240px;height:200px;border:1px solid #333333;background:#F1F1F1; padding:10px;
+	}
+</style>
+<script>
+window.onload= function(){
+	var oDiv = document.getElementById('div1');
+	var oSpan = document.getElementById('span1');
+	var oText = document.getElementById('text1');
+	var oBtn =document.getElementById('btn1');
+	
+	oBtn.onclick = function(){
+		if(oText.value == ""){
+			alert('请输入内容');
+			}else{    //else输入不为空执行。如果不写else就变成弹窗继续执行下面的内容了；
+		//oDiv.innerHTML=oDiv.innerHTML + oSpan.innerHTML + oText.value + '</br>' //如何后面不写oDiv.innerHTML就替换了，增加了就添加 a= a+b ,'<br/>'换行
+		oDiv.innerHTML+=oSpan.innerHTML + oText.value + '<br/>'
+		oText.value="";
+		};
+		}
+	}
+</script>
+</head>
+
+<body>
+<div id="div1"></div>
+<span id="span1">妙味：</span>
+<input type="text" id="text1" />
+<input type="button" value="提交" id="btn1"/>
+</body>
+</html>

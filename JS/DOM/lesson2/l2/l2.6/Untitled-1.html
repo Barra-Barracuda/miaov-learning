@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload = function(){
+	var aInput = document.getElementsByTagName('input');
+	var opener =null;
+	//window.open(页面的地址url,打开的方式) 方法，打开一个新的窗口（页面）。 window可以不写，如果url为空，则打开空白也为，如果打开方式为空，默认为新窗口方式打开;返回值：返回新打开的窗口的window对象
+	//close() 方法 关闭窗口 火狐兼容性有问题
+	
+	aInput[0].onclick = function(){
+		//window.open('http://www.baidu.com','_self');
+		
+		opener = window.open();
+		
+		//alert(opener);//[object window] 返回值
+		//alert(opener == window);//false 返回的是新窗口，不是本地窗口
+		
+		opener.document.body.style.background = 'pink';
+		
+		};
+	
+	aInput[1].onclick = function(){
+		window.close();
+		};
+		
+		
+		aInput[2].onclick = function(){
+			opener.close();
+		};
+	};
+</script>
+</head>
+
+<body>
+	<input type="button" value="打开新窗口" />
+    <input type="button" value="关闭窗口" />
+    <input type="button" value="关闭新窗口" />
+</body>
+</html>

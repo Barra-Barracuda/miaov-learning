@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+.body{
+	margin:0;
+}
+
+.box {
+	width:900px;  /* height 600px */
+	margin:0px auto;
+}
+.left{
+	width:300px;  /* 3个大div 900/3=300px */
+	float:left;
+}
+.left div{
+	height:298px;  /* 因为切割2个 600/2 - 2 =298px */
+	border:1px solid white;
+	background:#99ff00;
+}
+.center{
+	width:300px;
+	float:left;
+}
+.center div{
+	height:198px; /* 因为切割3个 600/3 - 2 =198px */
+	border:1px solid white;
+	background:#ccff00;
+}
+.right{
+	width:300px;
+	float:left;
+}
+.right div{
+	height:298px;
+	border:1px solid white;
+	background:#ffff00;
+}
+</style>
+</head>
+
+<body>
+<div class="box">
+	<div class="left">
+		<div></div>
+   	    <div></div>
+	</div>
+
+	<div class="center">
+		<div></div>
+   	    <div></div>
+    	<div></div>
+	</div>
+	<div class="right">
+		<div></div>
+    	<div></div>
+	</div>
+</div>
+</body>
+</html>

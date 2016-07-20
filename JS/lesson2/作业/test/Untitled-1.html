@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+
+li{width:50px;height:50px;background:red;position:absolute;text-align:center;line-height:50px;list-style:none;}
+</style>
+<script>
+window.onload = function(){
+	var oBtn = document.getElementById('btn1');
+	var oLi = document.getElementsByTagName('li');
+	
+	
+	oBtn.onclick = function(){
+		for(var i=0;i<10;i++){
+		document.body.innerHTML += '<li>'+ i + '</li>'
+		oLi[i].style.left = i*60 +'px';
+		};
+		};
+	};
+</script>
+</head>
+
+<body>
+<input type="button" id="btn1" value="按钮10个" />
+</body>
+</html>

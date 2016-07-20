@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload = function(){
+
+var aA = document.getElementsByTagName('a');
+
+for(var i=0;i<aA.length;i++){//循环获取每个a标签的点击动作
+	aA[i].onclick = function(){
+		//元素.parentNode:只读属性，当前节点的父级节点
+		
+		this.parentNode.style.display = 'none';
+		};
+	};
+};
+</script>
+</head>
+
+<body>
+	<ul id="ul1">
+            <li>11111 <a href="javascript:;">隐藏</a></li>
+            <li>22222 <a href="javascript:;">隐藏</a></li>
+            <li>33333 <a href="javascript:;">隐藏</a></li>
+            <li>44444 <a href="javascript:;">隐藏</a></li>
+     </ul>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+var a = {
+	name:'小明'
+	};
+	
+var b = cloneObj(a);
+
+b.name = '小强';
+
+alert(b.name);	
+alert(a.name);
+	function cloneObj(obj){
+		var F = function(){};
+		F.prototype =obj;
+		
+		return new F();
+		
+		};
+</script>
+</head>
+
+<body>
+</body>
+</html>

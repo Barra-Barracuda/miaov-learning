@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+li{height:40px;}
+ol li{background:blue;}/* 1+1 */
+li{background:green;}/* 1 */
+.list{background:red;}/* 10 */
+.list1{background:yellow;}/* 10 */
+#box{background:pink;}/* 100 */
+/* 
+同级样式默认后者覆盖前者；
+
+样式优先级
+类型(1)  <  class(10)  <  id(100)  <  style行间样式(1000) < js
+
+测试：
+	A、#header #div1 .box1 div .section p .link{………………}
+	B、#some .base #font #call a{………………}
+	
+答案:B
+
+
+ */
+
+</style>
+</head>
+<body>
+
+<ol>
+	<li class="list list1" id="box" style="background:purple;"></li>
+	<li class="list1 list"></li>
+  <li class="list"></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ol>
+<script>
+document.getElementById('box').style.background='#000';
+</script>
+
+</body>
+</html>

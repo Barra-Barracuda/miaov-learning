@@ -1,0 +1,21 @@
+/* www.miaov.com - leo - QQ:1056104999 */
+
+.products_list { width:706px; overflow:hidden; }
+#shopping { background:url(images/ie6/shopping_bg.gif) no-repeat; }
+#shopping a { background:url(images/ie6/shopping_a.png); }
+
+#nav .active a, #nav a:hover { background: url(images/ie6/nav_bg.png) repeat-x 0 -58px; text-decoration:none; }
+#nav .active strong, #nav a:hover strong { background: url(images/ie6/nav_bg.png) no-repeat 0 -29;}
+#nav .active span, #nav a:hover span { background: url(images/ie6/nav_bg.png) no-repeat right 0;}
+
+#content { background:url(images/ie6/content_bg.gif) repeat-y -2000px 0; }
+#content_top { background:url(images/ie6/content_bg.gif) no-repeat; }
+#content_bottom { background:url(images/ie6/content_bg.gif) no-repeat -1000px bottom; }
+
+.module_menu h2 { background:#ca2a27 url(images/ie6/module_menu_h2_bg.gif) repeat-x 0 -58px; }
+.module_menu strong { background:url(images/ie6/module_menu_h2_bg.gif) no-repeat 0 -29px; }
+.module_menu span { background:url(images/ie6/module_menu_h2_bg.gif) no-repeat right 0; }
+
+.module_search ul { background:url(images/ie6/module_search_ul_bg.gif) no-repeat; }
+
+.scroll .prev { background:url(images/ie6/prev_bg.png); }

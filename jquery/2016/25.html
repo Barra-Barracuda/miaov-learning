@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="jquery-1.11.3.js"></script>
+<script>
+
+$(function(){
+
+    var bBtn = true;
+
+ //prop()  // . []  oDiv.index = i ;  oDiv['index'] = i;
+
+/*
+ var aInput = document.getElementsByTagName('input');
+
+aInput[0].onclick = function(){
+
+
+if(bBtn){
+    for(var i=1;i<aInput.length;i++){
+
+       aInput[i].checked = true;
+       }
+}else{
+for(var i=1;i<aInput.length;i++){
+
+       aInput[i].checked = false;
+       }
+}
+bBtn = !bBtn;
+    
+}
+*/
+
+
+
+
+$('input[type="button"]').click(function(){
+
+    if(bBtn){
+    $('input[type="checkbox"]').prop('checked',true);
+}else{
+$('input[type="checkbox"]').prop('checked',false);
+}
+bBtn = !bBtn;
+})
+
+
+});
+
+</script>
+</head>
+
+<body>
+<input type="button" value="全选" />
+<input type="checkbox" />
+<input type="checkbox" />
+<input type="checkbox" />
+</body>
+</html>

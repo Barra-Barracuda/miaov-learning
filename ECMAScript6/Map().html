@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //Map()
+    //ES6提供了map数据结构，它类似于对象，也是键值对的集合，但是“键”的范围不限于字符串，各种类型的值（包括对象）都可以当作键。
+    //Map也可以接受一个数组作为参数，该数组的成员是一个个表示键值对的数组。
+var obj = {
+    'name':'leo'
+};
+
+var map = new Map([['age',20],[obj,23]]); //Map {"age" => 20, Object {name: "leo"} => 23}
+console.log(map);
+
+var arr = [...map]; //[["age", 20], [Object { name="leo"}, 23]]
+
+console.log(arr);
+
+    </script>
+</body>
+</html>

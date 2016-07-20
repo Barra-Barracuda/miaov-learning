@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+#div1 {
+	width: 100px;
+	height: 100px;
+	background: red;
+}
+</style>
+<script>
+window.onload = function(){
+	var oDiv = document.getElementById('div1');
+	//ie/chrome :onmousewheel
+		//event.wheelDelta //向上120 向下-120
+		
+	//firefox:DOMMouseScroll 必须用addEventListener ，eventdetail 向上：-3， 向下3;其他浏览器为0；ie非标准undefined；
+	
+	//return false阻止的是 obj.on事件名称 =fn 和 addEvent 所触发的默认行为；
+	//addEventListener绑定的事件需要通过event下面的preventDefault();阻止
+	oDiv.onmousewheel = fn;
+	
+	if(oDiv.addEventListener){
+	oDiv.addEventListener('DOMMouseScroll',fn,false);//firefox
+	}
+
+	
+	function fn(ev){
+		//alert(1);
+		
+		var ev = ev || event;
+		
+		//alert(ev.wheelDelta);
+		//alert(ev.detail); 
+		
+		var b = true;
+		
+		if(ev.wheelDelta){ //用布尔值解决问题，避开数字不一样
+			b = ev.wheelDelta>0?true:false; //ie，chrome
+			}else{
+				b=ev.detail<0?true:false;//firefox
+				};
+		
+		if(b){
+			this.style.height = this.offsetHeight - 10 + 'px';//true的话就-10
+			}else{
+				this.style.height = this.offsetHeight + 10 + 'px'; 
+				
+				};
+				
+		if(ev.preventDefault){
+			ev.preventDefault();
+			};		
+			
+			return false;
+		};
+	
+	};
+</script>
+</head>
+
+<body style="height:2000px">
+<div id="div1"></div>
+</body>
+</html>

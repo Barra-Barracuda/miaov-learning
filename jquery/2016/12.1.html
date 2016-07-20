@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script src="jquery-1.11.3.js"></script>
+<style>
+div{width:100px;height:100px;background: red;position: absolute;}
+</style>
+<script>
+$(function(){
+
+var disX = 0;
+var disY = 0;
+var $div = $('div');
+
+$div.on('mousedown',function(ev){
+    disX = ev.pageX - $(this).offset().left;
+    disY = ev.pageY - $(this).offset().top;
+
+
+$(document).on('mousemove.drag',function(ev){
+    $div.css('top',ev.pageY - disY);
+    $div.css('left',ev.pageX - disX);
+})
+
+$(document).on('mouseup.drag',function(){
+    $(this).off('.drag');
+})
+return false;
+
+})
+
+})
+
+
+</script>
+</head>
+<body>
+	<div>div</div>
+</body>
+</html>

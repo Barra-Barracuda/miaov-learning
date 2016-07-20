@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+<script src="jquery-1.11.3.js"></script>
+<style>
+div{width:100px;height:100px;background: red;position: absolute;}
+</style>
+<script>
+$(function(){
+//animate()第一个参数：对象{}去设置样式属性和值（目标点）
+        //第二个参数：时间
+        //第三个参数：运动形式 只有2种 swing（默认：缓冲） linear（匀速的）
+        //第四个参数：运行结束的回调
+
+/*        
+$('div').animate({
+    width:'+=100', //每次加等100
+    height:200
+    },1000,'linear',function(){
+        alert(123);
+    });
+    */
+
+  $('div').animate({
+    width:200
+  },{
+    duration:2000,
+    easing:'linear',
+    complete:function(){
+        //alert(123);
+    },
+    step:function(a,b){ //可以检测每一次变化
+        //console.log(a);
+        //console.log(b);//更详细
+        //console.log(b.pos);  //运动过程中的比例值（0-1）
+        $('div').html(parseInt(b.pos * 9454646499));
+    }
+
+
+  })  
+})
+
+
+</script>
+</head>
+<body>
+	<div>div</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+//var arr=[1,2,3];
+var arr = new Array(1,2,3);
+//alert(arr[1]);
+
+
+//var arr1 =new Array('3');
+var arr1 = new Array(14);
+//alert(arr1.length);//14,函数array的只有一个参数就是数组长度
+//alert(arr1.length);//1
+
+var arr2 = [1,2,3];
+//alert(arr2.push('abc'));//返回的是数组的长度4
+
+//arr2.unshift(0); //往数组前面添加
+//alert(arr2.unshift(0)); //4 ,unshift ie6 7不支持
+//alert(arr2);
+
+var arr3 =['TM','MD','CNM','RLG'];
+//arr3.pop();//移除数组最后一个
+arr3.shift();//移除数组第一个
+
+//alert(arr3.pop());//RLG
+//alert(arr3.shift());//MD
+//alert(arr3);
+
+
+var arr4 =['TM','MD','CNM','RLG'];
+arr4.unshift(arr4.pop());
+//alert(arr4);
+
+var arr5 =['TM','MD','CNM','RLG'];
+//arr5.splice(0,2); //从第0个开始删除一个
+//alert(arr5.splice(0,2));//TM，MD 返回值是删除的东西
+
+//arr5.splice(0,1,'他妈');//先删除，后替换
+//alert(arr5.splice(0,1,'他妈'));//TM
+
+arr5.splice(2,0,'shit'); //第二个参数0就是添加
+//alert(arr5.splice(2,0,'shit'));// 空
+//alert(arr5);
+
+
+</script>
+</head>
+
+<body>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+
+<script>
+//1.绯闻那契数列 1、1、2、3、5、8、13、21
+function aaa(n){
+	
+/*	if(n<=2){
+		return 1;
+		}
+	
+	return aaa(n-1) +aaa(n-2);
+	}*/
+	
+	var num1 = 1;
+	var num2 = 1;
+	var num3 =0;
+	
+	
+	for(var i=0;i<n-2;i++){
+		num3= num1 +num2;
+		num1 =num2;
+		num2 =num3;
+		}
+		return num3;
+
+alert(aaa(8));
+</script>
+</head>
+
+<body>
+</body>
+</html>

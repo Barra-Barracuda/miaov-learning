@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+
+
+
+    <script>
+    var Cat = function(name){
+        this.name = name;
+    }
+    Cat.prototype.showname = function(){
+        return this.name;
+    }
+
+    var Person = function(){};
+    Person.prototype.showsex = function(){};
+
+var c1 = new Cat('haha');
+//console.log(Object.getPrototypeOf(c1)); //Object { name="haha",  showname=function()}
+
+Object.setPrototypeOf(c1,Person.prototype);
+console.log(Object.getPrototypeOf(c1)); //  Object { name="haha",  showsex=function()}
+
+    </script>
+</body>
+</html>

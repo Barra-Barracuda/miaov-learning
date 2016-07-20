@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+li{list-style:none;width:100px;height:30px;background:yellow;margin:10px;}
+#div1{width:100px;height:100px;background:red;margin:200px;}
+</style>
+<script>
+window.onload = function(){
+	var oUl = document.getElementsByTagName('ul')[0];
+	var aLi = oUl.getElementsByTagName('li');
+	var oDiv = document.getElementById('div1');
+	var oImg = document.getElementById('img1');
+	
+	var i =0;
+	
+	for(var i=0;i<aLi.length;i++){
+		
+
+		
+		aLi[i].ondragstart = function(ev){
+			
+			var ev = ev || window.event;
+			
+			ev.dataTransfer.setData('name','hello'); //火狐兼容 setData():设置数据key和value(必须是字符串)
+			
+			ev.dataTransfer.effectAllowed = 'copy'; //copy link copylink
+			
+			ev.dataTransfer.setDragImage(oImg,50,10); //拖拽时的效果（目标，x轴，y轴）
+			
+			this.style.background = 'green';
+			};
+			
+
+			
+		aLi[i].ondragend = function(){
+			this.style.background = 'yellow';
+			};
+	
+		oDiv.ondragenter = function(){
+			this.style.background = 'blue';
+			
+			};
+			
+		oDiv.ondragover = function(ev){//enter 和leave 之间连续触发
+			document.title = i++;
+			
+			ev.preventDefault();  //要想触发drop事件，就必须在dragover当中阻止默认事件
+			
+			};	
+			
+		oDiv.ondragleave = function(){
+			this.style.background = 'red';
+			
+			};
+			
+		oDiv.ondrop = function(ev){
+			
+			//alert(ev.dataTransfer.getData('name'));	 //通过key值（name）获取value值（hello）		
+			//alert(123);
+			
+			oUl.removeChild(aLi[ev.dataTransfer.getData('name')]);
+			
+				for(var i=0;i<aLi.length;i++){ //重新定义下索引，不然最后一个删不掉； 因为本身索引0，1，2删掉就剩下0，1 所以要重新定义
+		
+		aLi[i].index = i;
+		};
+			
+			};	
+	};	
+	};
+</script>
+</head>
+
+<body>
+<ul>
+	<li draggable="true">a</li>
+    <li draggable="true">b</li>
+    <li draggable="true">c</li>
+</ul>
+<div id="div1"></div>
+<img src="../拖放/miaov.png" id="img1" style="display:none" />
+</body>
+</html>

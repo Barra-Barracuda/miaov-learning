@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /*
+    function fn(a,b=2){ //b=2 默认参数 定义默认参数必须是尾参数
+        return {a,b};
+    };
+    console.log(fn(1));
+*/
+/*
+    function fn1(a,b,c,...rest){ //...用于获取多余的剩下参数
+        console.log(rest);
+    } 
+    fn1(1,2,3,4,5,6,7,8);
+*/
+var arr = [1,2,3,4,5,6,7,8];
+//console.log(Math.max.apply(null,arr));
+//console.log(Math.max(1,2,3,4,5,6,7,8));
+//console.log(Math.max(...arr)); //扩展运算符，把数组拆成1,2,3,4,5,6,7,8
+
+var str = 'miaov';
+var arr1 = [...str];
+console.log(arr1);
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+
+
+
+    <script>
+    //类数组：拥有length属性，其它属性（索引）为非负整数(对象中的索引会被当做字符串来处理，这里你可以当做是个非负整数串来理解)
+//不具有数组所具有的方法
+//ps：这是我参考的定义，实际上，只要有length属性，且它的属性值为number类型就行了。
+//eg：var a = {'1':'gg','2':'love','4':'meimei',length:5};
+//Array.prototype.join.call(a,'+');//'+gg+love++meimei'
+
+    var eles = document.getElementsByTagName('div');
+    //var arr = [].slice.call(eles); //将div变成数组 Array.prototype.slice.call(arguments)
+    //console.log(arr);
+    //alert(arr);
+
+    var arr = Array.from(eles); //转成类数组
+    console.log(arr);
+
+    var str = '顶啊';
+    var arr1 = Array.from(str);
+    console.log(arr1);  //['顶','啊']
+
+    var arr2 = Array.of(5);
+    console.log(arr2);
+    </script>
+</body>
+</html>

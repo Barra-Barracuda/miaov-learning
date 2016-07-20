@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload = function(){
+	var oUl = document.getElementById('ul1');
+	//元素.childNodes：只读属性，子节点列表的集合,只包含一级子节点，不包括后辈孙级别以下的，工作中不推荐用，兼容性好多问题,推荐用children代替
+	
+	//alert(oUl.childNodes.length);//标准下是9，5个换行符+4个元素节点，非标准是4
+	
+	//元素.nodeType :只读属性，当前元素的节点类型
+	//元素.attributes:只读获取属性，属性列表集合
+	//元素节点：1
+	//文本节点：3
+	//属性节点：2
+	
+	//alert(oUl.childNodes[0].nodeType);//3
+	//alert(oUl.nodeType);//1
+	//alert(oUl.attributes.length);//1 DW里面显示2 - -
+	//alert(oUl.attributes[0].name); //id  ，用attributes.name获取
+	//alert(oUl.attributes[0].value); //ul1  ，用attributes.name获取
+	//alert(oUl.attributes[0].nodeType);//2
+	
+	
+/*	for(var i=0;i<oUl.childNodes.length;i++){
+		if(oUl.childNodes[i].nodeType == 1){//因为不能把换行设置样式
+			oUl.childNodes[i].style.background = 'red';
+			};
+		
+		};*/
+		
+		
+//元素.children:只读属性，子节点列表集合，只包含元素类型的节点
+//alert(oUl.children.length);//4
+
+for(var i=0;i<oUl.children.length;i++){
+
+			oUl.children[i].style.background = 'red';
+			};
+		
+
+
+
+	};
+</script>
+</head>
+
+<body>
+	<ul id="ul1">
+            <li>11111 <span>span</span></li>
+            <li>22222</li>
+            <li>33333</li>
+            <li>44444</li>
+     </ul>
+</body>
+</html>

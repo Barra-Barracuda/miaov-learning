@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+p { border:10px solid #ccc; background:#FFC; width:400px; padding:20px; font-size:16px; font-family:微软雅黑; }
+span { background:yellow; }
+</style>
+</head>
+
+<body>
+<input type="text" />
+<input type="text" />
+<input type="button" value="替换" />
+
+<p>妙味课堂是一支独具特色的IT培训团队，妙味反对传统IT教育枯燥乏味的教学模式，妙味提供一种全新的快乐学习方法！<br />
+2013年底，妙味课堂最新推出"远程培训"服务，受到很多朋友们的喜爱与追捧，我们必将更加努力的帮助远程学习的朋友实现技术提升……</p>
+
+<script>
+var aInp = document.getElementsByTagName('input');
+var oP = document.getElementsByTagName('p')[0];
+
+//aInp[1].onclick = function(){
+aInp[2].onclick = function(){
+	var str = aInp[0].value;
+	var newStr = aInp[1].value;
+	
+	if(!str)return;//没有输入就返回
+	
+	//alert(oP.innerHTML.split(str)); //把输入的文字当做分隔符
+	//oP.innerHTML = oP.innerHTML.split(str).join('<span>'+str+'</span>'); //把str从全文切开来先，再用join把高亮的文字拼再一起
+	oP.innerHTML = oP.innerHTML.split(str).join('<span>'+newStr+'</span>');//把str切割出来，在用新文字join一起
+	
+	};
+</script>
+</body>
+</html>

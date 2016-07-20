@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+
+
+
+    <script>
+ "use strict"
+var arr = [1,2,3,4,5];
+/*
+ for(var value of arr){ //可以遍历数组和字符串
+    console.log(value);
+ };
+*/
+/*
+for(var key of arr.keys()){ //.keys()遍历索引值
+    console.log(key);
+}
+*/
+/*
+for(var [key,value] of arr.entries()){ //遍历key和value值
+    console.log(key,value);
+}
+*/
+var arr2 = [for(i of arr) i*2]; //只有firefox支持 每一项*2
+var arr3 = [for(i of arr) if(i<3) i]
+//console.log(arr2);
+console.log(arr3);
+    </script>
+</body>
+</html>

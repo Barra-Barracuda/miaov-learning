@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+li{ float:left; width:50px; height:50px; background:red; margin:5px;}
+</style>
+<script src="jquery-1.11.3.js"></script>
+<script>
+
+$(function(){
+	
+var bBtn = true;
+
+$('ul').find('li').mouseover(function(){
+	if(bBtn){
+	var index = $(this).index();
+	$('li').each(function(i,elem){
+		if(i<=index){
+			$(this).css('background','blue'); //i是指你指的那個的前面，但index是你所指的那個
+
+		}else{
+			$(this).css('background','red');
+		}
+	})
+}
+}).mouseout(function(){
+	if(bBtn){
+	$('li').css('background','red');
+}
+})
+
+$('li').click(function(){
+	bBtn = false;
+})
+
+});
+
+</script>
+</head>
+
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+</body>
+</html>

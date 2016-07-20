@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+//for(var i=0;i<3;i++){document.title = i;
+	
+//	};
+i = 0;	
+var timer = null;
+function fn1(){
+	i++;
+	document.title = i;
+	
+	
+	if(i === 10){
+		clearInterval(timer); 
+		}
+	}	
+var timer = setInterval(fn1,100);  //重复执行
+ //清除定时器
+
+</script>
+</head>
+
+<body>
+</body>
+</html>

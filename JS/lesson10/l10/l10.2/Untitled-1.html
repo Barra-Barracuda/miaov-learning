@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+
+
+window.onload = function(){
+	
+	var oBody = document.body;
+	var oP = document.getElementById('time');
+	var aImg = document.getElementsByTagName('img');
+	
+	setInterval(fnTime,1000); //每隔一秒钟调用fnTime
+	
+	fnTime(); //直接调用一下，不用刷新等一秒钟才走
+	
+	function fnTime(){
+
+var myTime = new Date();
+
+var iHours = myTime.getHours();
+var iMin = myTime.getMinutes();
+var iSec = myTime.getSeconds();
+
+
+
+var str = toTwo(iHours) + toTwo(iMin)  + toTwo(iSec);
+
+
+
+oP.innerHTML = str; //将有可能是1 2 3的数字，用toTwo包起来执行。
+
+//aImg[5].src = 'img/'+str.charAt(5)+'.JPG';  //153740 str.charAt(5)时间的最后一个数字代表哪个jpg
+
+
+
+for(var i=0;i<str.length;i++){ //每一个src
+
+
+
+	aImg[i].src = 'img/'+str.charAt(i)+'.JPG';
+	
+	};
+	};
+
+
+
+
+function toTwo(n){
+	if(n<10){
+		return  '0'+n;//返回的值是 =toTwo(iSec)
+	}else{
+		return '' +n; //返回字符串
+		};
+	
+	};
+
+
+};
+
+</script>
+</head>
+
+<body>
+<p id="time"></p>
+<img src="img/0.JPG" />
+<img src="img/0.JPG" />
+<img src="img/colon.JPG">
+<img src="img/0.JPG" />
+<img src="img/0.JPG" />
+<img src="img/colon.JPG">
+<img src="img/0.JPG" />
+<img src="img/0.JPG" />
+</body>
+</html>
